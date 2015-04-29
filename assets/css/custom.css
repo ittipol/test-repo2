@@ -36,7 +36,7 @@ body{
 }
 
 #content{
-	padding: 0 !important;
+	padding: 0 0 40px 0 !important;
 }
 
 #header-wrapper{
@@ -730,7 +730,7 @@ ul.header-nav-list li a{
 
 .cell{
 	text-align: left;
-	padding: 30px 80px;
+	padding: 30px 0 30px 80px;
 }
 
 .cell-header img{
@@ -748,4 +748,23 @@ ul.header-nav-list li a{
   	font-size: 30px;
   	line-height: 50px;
   	padding-left: 20px;
+}
+
+.cell-header .cell-text a{
+	color: #707070;
+	text-decoration: none;
+}
+
+.cell-footer .cell-message{
+	font-size: 24px;
+	line-height: 24px;
+}
+
+table.table thead td{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+table.table tbody td{
+	font-size: 22px;
 }

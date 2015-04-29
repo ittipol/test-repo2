@@ -217,36 +217,7 @@
 			             </div>
 				    </div><!-- /.partners-->    
 				    
-				    <div class="partners">
-					    <h2 class="page-header">สถาบันที่เข้าร่วมโครงการ</h2>
-					    <div class="content">
-					        
-					         <div class="partner">
-					            <a href="http://logopond.com/gallery/detail/192115">
-					                <img src="assets/img/school_logo/harrow-logo.jpg" alt="Logo">
-					            </a>
-					        </div><!-- /.partner -->
-					
-					        <div class="partner">
-					            <a href="http://logopond.com/gallery/detail/191954">
-					                <img src="assets/img/school_logo/british_council-logo.jpg" alt="Logo">
-					            </a>
-					        </div><!-- /.partner -->
-					
-					        <div class="partner">
-					            <a href="http://logopond.com/gallery/detail/192592">
-					                <img src="assets/img/school_logo/isb-logo.jpg" alt="Logo">
-					            </a>
-					        </div><!-- /.partner -->
-					
-					        <div class="partner">
-					            <a href="http://logopond.com/gallery/detail/192905">
-					                <img src="assets/img/school_logo/ruamrudee-logo.jpg" alt="Logo">
-					            </a>
-					        </div><!-- /.partner -->
-
-					    </div><!-- /.content -->
-					</div><!-- /.partners-->    
+				    
 				</div>
 			</div>
 		</div>
