@@ -1,0 +1,41 @@
+#page {
+    padding-top: 60px;
+}
+
+.box-login {
+	max-width: 400px;
+	margin: 40px auto 0;
+}
+.table {
+	font-size: 13px;
+}
+
+a.sort-link {
+	display: block;
+	color: black;
+}
+a.asc, a.desc {
+	padding-right: 18px;
+}
+.grid-view table th {
+	background-color: #f0f0f0;
+	height: 36px;
+	vertical-align: middle!important;
+	font-size: 110%;
+}
+
+.grid-view .filters .filter-container {
+	padding:0!important;
+}
+
+.mg-bt {
+	margin-bottom: 15px;
+}
+
+#item-form [class^="span"]{
+	text-align: center;
+}
+
+#item-form .mg-bt .span3:first-child {
+	text-align: right;
+}

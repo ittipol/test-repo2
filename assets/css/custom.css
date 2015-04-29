@@ -1,0 +1,751 @@
+/* Font Style */
+/*@font-face {
+    font-family: '';
+    src: url('.eot');
+    src: url('.eot?#iefix') format('embedded-opentype'),
+         url('.woff') format('woff'),
+         url('.ttf') format('truetype'),
+         url('.svg#sukhumvit_setthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+@font-face {
+    font-family: 'ThaiSansNeue_light';
+    src: url('/assets/font/ThaiSansNeue-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ThaiSansNeue_regular';
+    src: url('/assets/font/ThaiSansNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ThaiSansNeue_Exlight';
+    src: url('/assets/font/ThaiSansNeue-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	font-family: ThaiSansNeue_regular !important;
+}
+
+#content{
+	padding: 0 !important;
+}
+
+#header-wrapper{
+	position: relative;
+	z-index: 1000;
+}
+
+#main-content{
+	position: relative;
+	z-index: 999;
+}
+
+.boxText0{
+	 display: block; margin-top:12%;  margin-left: 11.5625%; position: absolute;
+ }
+ 
+ .boxText5{
+	 display: block; margin-top:10%;  margin-left: 50%; position: absolute; color: #FFF; width:38%;
+ }
+
+.boxText0 h2{
+	font-size: 50px;
+	color: #FFF !important;
+}
+.boxText0 div.text1{
+	font-size: 30px;
+	line-height: 30px;
+	color: rgb(250,241,22);
+}
+.boxText0 div.text2{
+	display: block;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+.boxText5 h2{
+	font-size: 50px;
+	color: #FFF !important;
+}
+.boxText5 div.text1{
+	font-size: 30px;
+	line-height: 30px;
+	color: rgb(250,241,22);
+}
+.boxText5 div.text2{
+	display: block;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+	.boxText0{
+		 margin-top:10%;
+	}
+	.boxText0 h2{
+		font-size: 40px !important;
+	}
+	.boxText0 div.text1{
+		display: block;
+		font-size: 18px;
+		line-height: 20px
+	}
+	.boxText0 div.text2{
+		display: block;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.boxText5 div.text1{
+		display: block;
+		font-size: 18px;
+		line-height: 20px
+	}
+	.boxText5 div.text2{
+		display: block;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+}
+
+@media (min-width: 658px) and (max-width: 767px) { 
+
+	.boxText0{
+		 margin-top:8%;
+	}
+	.boxText0 h2{
+		font-size: 30px !important;
+		line-height: 5px;
+	}
+	.boxText0 div.text1{
+		display: block;
+		font-size: 14px;
+		line-height: 15px
+	}
+	.boxText0 div.text2{
+		display: block;
+		font-size: 12px;
+		line-height: 15px;
+	}
+
+	.boxText5{
+		 margin-top:8%;
+	}
+	.boxText5 h2{
+		font-size: 30px !important;
+		line-height: 5px;
+	}
+	.boxText5 div.text1{
+		display: block;
+		font-size: 14px;
+		line-height: 15px
+	}
+	.boxText5 div.text2{
+		display: block;
+		font-size: 12px;
+		line-height: 15px;
+	}
+
+}
+
+@media (max-width: 657px) { 
+
+	.boxText0{
+		 margin-top:6%;
+	}
+	.boxText0 h2{
+		font-size: 20px !important;
+		margin: 0 !important;
+	}
+	.boxText0 div.text1{
+		display: block;
+		font-size: 12px;
+		line-height: 10px
+	}
+	.boxText0 div.text2{
+		display: block;
+		font-size: 10px;
+		line-height: 10px;
+	}
+
+	.boxText5{
+		 margin-top:6%;
+	}
+	.boxText5 h2{
+		font-size: 20px !important;
+		margin: 0 !important;
+	}
+	.boxText5 div.text1{
+		display: block;
+		font-size: 12px;
+		line-height: 10px
+	}
+	.boxText5 div.text2{
+		display: block;
+		font-size: 10px;
+		line-height: 10px;
+	}
+
+	.section3{
+	  height: 160px;
+	}
+
+}
+
+@media (max-width: 1000px) { 
+	#searchbar{
+		overflow: visible;
+	}
+
+	.search-field{
+		width: 160px !important;
+	}
+}
+
+@media (min-width: 767px) { 
+	#searchbar{
+		display: block;
+	}
+
+	#searchbar2{
+		display: none;
+	}
+}
+
+@media (max-width: 767px) { 
+	#searchbar{
+		display: none;
+	}
+
+	#searchbar2{
+		display: block;
+	}
+}
+
+.logo-text{
+	position: absolute;
+	top: 2px;
+	left: 58px;
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+	color: #fff;
+}
+
+.searchbar{
+	/*position: absolute;
+    top: 30px;
+    left: 60%;
+    width: 185%;*/
+    margin-top: 30px;
+	height: 34px;
+	overflow: hidden;
+}
+
+.university-list{
+	float: left;
+	height: 34px;
+	line-height: 34px;
+	width: auto;
+	border-radius:0;
+	background-color: rgb(250,250,250);
+	border-radius: 4px 0 0 4px;
+
+}
+
+.search-field{
+	float: left !important;
+	display: block !important;
+	border-left: 0 !important;
+	border-right: 0 !important;
+}
+
+.search-btn{
+	float: left;
+	border: 1px solid #000;
+	background-color: rgb(114,120,127);
+	border-radius: 0 4px 4px 0;
+	color: #fff;
+	height: 34px;
+}
+
+/*select {
+ width: 50px;
+}*/
+
+#width_tmp{
+ display : none;
+}
+
+.logout-image{
+  background-image: url(../../assets/img/logout.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 40px;
+}
+
+.history-image{
+  background-image: url(../../assets/img/history.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 40px;
+}
+
+.wrapper {
+  transform: translateZ(0);
+  font-smoothing: antialiased;
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.wrapper .tooltip {
+	font-size: 20px;
+	background-color: rgb(39, 174, 96);
+	bottom: 100%;
+	color: #fff;
+	display: block;
+	/*left: -25px;*/
+	left: -33px;
+	/*margin-bottom: 15px;*/
+	margin-bottom: 10px;
+	opacity: 0;
+	padding: 5px;
+	pointer-events: none;
+	position: absolute;
+	/*width: 100%;*/
+	width: 100px;
+	text-align: center;
+	-webkit-transform: translateY(10px);
+	 -moz-transform: translateY(10px);
+	  -ms-transform: translateY(10px);
+	   -o-transform: translateY(10px);
+	      transform: translateY(10px);
+	-webkit-transition: all .25s ease-out;
+	 -moz-transition: all .25s ease-out;
+	  -ms-transition: all .25s ease-out;
+	   -o-transition: all .25s ease-out;
+	      transition: all .25s ease-out;
+	-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	 -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	  -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	   -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid rgb(39, 174, 96) 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+  
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
+}
+
+.wrapper .tooltip-lower {
+	font-size: 20px;
+	background-color: rgb(39, 174, 96);
+	top: 100%;
+	color: #fff;
+	display: block;
+	left: -33px;
+	margin-top: 10px;
+	opacity: 0;
+	padding: 5px;
+	pointer-events: none;
+	position: absolute;
+	/*width: 100%;*/
+	width: 100px;
+	text-align: center;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	-ms-transform: translateY(10px);
+	 -o-transform: translateY(10px);
+	    transform: translateY(10px);
+	-webkit-transition: all .25s ease-out;
+	-moz-transition: all .25s ease-out;
+	-ms-transition: all .25s ease-out;
+	 -o-transition: all .25s ease-out;
+	    transition: all .25s ease-out;
+	-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	-moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	-ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	 -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip-lower:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip-lower:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-bottom: solid rgb(39, 174, 96) 10px;
+  top: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+  
+.wrapper:hover .tooltip-lower {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip-lower {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip-lower {
+  display: block;
+}
+
+.section-control-1{
+	width:100%; display: block; background-color:#FFFFFF; border-bottom:1px solid #AAAAAA;
+}
+
+.logo-wrapper{
+	width: 230px !important;
+}
+
+.logo-wrapper::before{
+	  position: absolute;
+	  border-right: 1px solid rgb(0,123,175);
+	  top: 16px;
+	  right: 0;
+	  height: 60px;
+	  width: 20px;
+	  content: "";
+}
+
+.header-nav{
+	height: 100%;
+	margin: 0 !important;
+}
+
+ul.header-nav-list{
+	height: 100%;
+	float: left;
+	margin: 0 0 0 50px !important;
+	padding: 0 !important;
+}
+
+ul.header-nav-list li{
+  	line-height: 90px;
+  	color: #FFF;
+  	font-size: 22px;
+}
+
+ul.header-nav-list li a{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.header-btn{
+	font-size: 22px !important;
+	background-color: rgb(18,91,123) !important;
+}
+
+.sub-text-box{
+	/*width: 100%;*/
+	padding: 10px;
+	background-color: rgba(0,0,0,.3);
+}
+
+.custom-btn-1{
+	width: 400px !important;
+	font-family: sukhumvit_settext !important;
+}
+
+.boxText5 h2, .boxText5 div{
+	text-align: right;
+}
+
+#footer-wrapper{
+	background-color: rgb(1,156,222) !important;
+}
+
+.footer-nav{
+	text-align: center;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid #FFF;
+}
+
+.footer-nav a{
+	color: #FFF;
+	text-decoration: none;
+	font-size: 18px;
+	margin: 0 10px;
+}
+
+.footer-nav a:hover{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.copyright{
+	text-align: center;
+	font-size: 18px;
+}
+
+.boxText3{
+	 display: block; margin-top:3%;  margin-left: 15%; position: absolute; color: #FFF; width:38%;
+ }
+ 
+ .boxText4{
+	 display: block; margin-top:3%;  margin-left: 55%; position: absolute; color: #FFF; width:38%;
+ }
+
+ @media (min-width: 768px) and (max-width: 979px) {
+	  
+	  .boxText3{
+		  margin-top:0%;
+	  }
+	  .boxText3 h2{
+	  		 font-size: 18px;
+	  }
+	  .boxText3 span{
+	  		 font-size: 12px;
+	  }
+	  .boxText3 a{
+	  		 font-size: 12px;
+	  }
+	  
+	  .boxText4{
+		  margin-top:0%;
+	  }
+	  .boxText4 h2{
+	  		 font-size: 18px;
+	  }
+	  .boxText4 span{
+	  		 font-size: 12px;
+	  }
+	  .boxText4 a{
+	  		 font-size: 12px;
+	  }
+
+	}
+	
+  @media (min-width: 658px) and (max-width: 767px) { 
+	  
+	  .boxText3{
+		  margin-top:0%;
+	  }
+	  .boxText3 h2{
+	  		 font-size: 14px;
+	  		 line-height: 5px;
+	  }
+	  .boxText3 span{
+	  		 font-size: 10px;
+	  }
+	  .boxText3 a{
+	  		 font-size: 10px;
+	  }
+	  
+	  .boxText4{
+		  margin-top:0%;
+	  }
+	  .boxText4 h2{
+	  		 font-size: 14px;
+	  		 line-height: 5px;
+	  }
+	  .boxText4 span{
+	  		 font-size: 10px;
+	  }
+	  .boxText4 a{
+	  		 font-size: 10px;
+	  }
+
+	}
+
+	@media (max-width: 657px) { 
+
+		  .boxText3{
+			  margin-top:0%;
+			  margin-left: 10%;
+			  margin-right: 10%;
+			  width: 80%;
+		  }
+		  .boxText3 h2{
+		  		 font-size: 12px;
+		  		 line-height: 0px;
+		  }
+		  .boxText3 span{
+		  		 font-size: 8px;
+		  }
+		  .boxText3 a{
+		  		 font-size: 8px;
+		  }
+		  
+		  .boxText4{
+			  margin-top:30%;
+			  margin-left: 10%;
+			  margin-right: 10%;
+			  width: 80%;
+		  }
+		  .boxText4 h2{
+		  		 font-size: 12px;
+		  		 line-height: 0px;
+		  }
+		  .boxText4 span{
+		  		 font-size: 8px;
+		  }
+		  .boxText4 a{
+		  		 font-size: 8px;
+		  }  
+	  
+	}
+
+.landing-page-nav{
+	height:180px; 
+	background-color:#FFF;
+	text-align: center;
+}
+
+.landing-page-nav.nav-left{
+	text-align: left;
+}
+
+.landing-page-nav-inner{
+	height: 100%;
+	padding:0 20%;
+}
+
+.nav-btn{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+	border-radius: 50px;
+	border: 1px solid #888;
+	background-color: #FFF;
+	display: inline-block;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.nav-btn.large{
+	width: 35px;
+	height: 35px;
+	margin-top: 7px;
+}
+
+.nav-btn.icon{
+	background-size: 30px;
+}
+
+.alert{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.partner img{
+	width: 100px;
+}
+
+.partners .content-img .partner{
+	display: inline-block;
+  	vertical-align: middle;
+}
+
+.landing-page-nav .nav-label:not(:first-child){
+	margin-left: 20px;
+}
+
+.nav-label{
+	color: rgb(70,70,70) !important;
+	font-size: 20px !important;
+	line-height: 50px !important;
+	text-decoration: none !important;
+	font-weight: bold;
+}
+
+.nav-label:hover{
+	color: rgb(80,80,80);
+	text-decoration: none;
+}
+
+.cell{
+	text-align: left;
+	padding: 30px 80px;
+}
+
+.cell-header img{
+	width: 60px;
+	height: 60px;
+}
+
+.cell-header .cell-img{
+	float: left;
+}
+
+.cell-header .cell-text{
+	float: left;
+  	height: 60px;
+  	font-size: 30px;
+  	line-height: 50px;
+  	padding-left: 20px;
+}

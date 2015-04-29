@@ -1,0 +1,12 @@
+.chart-group{
+
+}
+
+.chart{
+	float:left; 
+	margin:20px;
+}
+
+.chart:not(:last-child){
+	/*border-right: 1px solid green;*/
+}
