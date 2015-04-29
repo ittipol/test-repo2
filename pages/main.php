@@ -60,38 +60,26 @@
         <div style="background-color:#999;" class="map-inner">
 
     <?php if($_SESSION['isLogin'] == ""){ ?>
-    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/sign-up.jpg);background-size:cover;background-position:center;" >
-	    <div id="signup-box" style="text-align:center;">
-		    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div>
-		    <div class="partners">
-	            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1">สมัครสมาชิก</a>
+
+	    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/sign-up.jpg);background-size:cover;background-position:center;" >
+		    <div id="signup-box" style="text-align:center;">
+			    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div>
+			    <div class="partners">
+		            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1">สมัครสมาชิก</a>
+				</div>
 			</div>
 		</div>
-	</div>
 	
-	<!-- <div class="landing-page-nav">
-		<div class="landing-page-nav-inner">
-			<a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a>
-		</div>
- 	</div> -->
-
  	<?php }else{ // logged in ?>
 
- 	<div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/logged-in.jpg);background-size:cover;background-position:center;" >
-	    <div id="signup-box" style="text-align:center;">
-		    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">ยินดีต้อนรับคุณ <?php echo $_SESSION['fullname']?></div>
-		    <div class="partners">
-	            <a href="index.php?page=paid_list" class="btn btn-primary btn-large list-your-property custom-btn-1">ชำระเงิน</a>
+	 	<div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/logged-in.jpg);background-size:cover;background-position:center;" >
+		    <div id="signup-box" style="text-align:center;">
+			    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">ยินดีต้อนรับคุณ <?php echo $_SESSION['fullname']?></div>
+			    <div class="partners">
+		            <a href="index.php?page=paid_list" class="btn btn-primary btn-large list-your-property custom-btn-1">ชำระเงินทันที</a>
+				</div>
 			</div>
 		</div>
-	</div>
-
-
-	<!-- <div class="landing-page-nav">
-		<div class="landing-page-nav-inner">
-			<a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a>
-		</div>
- 	</div> -->
 		
  	<?php } ?>
 
@@ -146,15 +134,14 @@
 		 		<div class="text1">ห้องสมุดของคุณ</div>
 		 		<div class="text2" style="color: #FFFFFF;">มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา</div>
 			</div>
-			<a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
+			<a href="http://www.zhake.com/web/index.php?route=api/apipp/elib" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
 	 	</div>
 	 </div>
 
-	 <!-- <img style="width:100%; height:auto;background-size:cover;background-position:center;"  src="assets/img/header.png"/></div> -->
     </div><!-- /.map -->
 </div><!-- /.map-wrapper -->
 
-<div class="row" style="height:50px;">
+<div class="row" style="height:10px; background-color:#06a7ea;">
 	<div style="text-align: center;">
 		<!-- <a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a> -->
 	</div>
@@ -167,7 +154,7 @@
 	 		<div class="text1">เลือกคอร์สเรียนสำหรับคุณ</div>
 	 		<div class="text2">คอร์สเรียนจากโรงเรียนชื่อดังที่มีให้เลือกมากมายและสามารถชำระเงินไดทันที</div>
 	 	</div>
-	 	<a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
+	 	<a href="index.php?page=booking" class="btn btn-primary list-your-property custom-btn-2" style="float:left;">เพิ่มเติม</a>
  	</div>
  </div>
 

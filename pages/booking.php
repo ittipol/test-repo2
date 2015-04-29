@@ -18,7 +18,7 @@
 	window.onload = function(){
 
 		var wH = window.innerHeight;
-		var h = 90 + 97;
+		var h = 90 + 130;
 		var hh = wH - h;
 	
 		var elem = document.getElementById("page-message");
