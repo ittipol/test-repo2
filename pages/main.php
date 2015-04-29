@@ -125,7 +125,7 @@
 			</div>
 			<div class="span4 cell">
 				<div class="cell-header clearfix">
-					<img class="cell-img" src="assets/img/icon/icon-course.png" />
+					<img class="cell-img" src="assets/img/icon/notification.multiple.png" />
 					<div class="cell-text">
 						<a href="javascript:void(0);" onclick="slideTo('booking-section');">Booking Portal</a>
 					</div>
@@ -146,69 +146,11 @@
 		 		<div class="text1">ห้องสมุดของคุณ</div>
 		 		<div class="text2" style="color: #FFFFFF;">มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา</div>
 			</div>
+			<a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
 	 	</div>
 	 </div>
 
 	 <!-- <img style="width:100%; height:auto;background-size:cover;background-position:center;"  src="assets/img/header.png"/></div> -->
-
-        <div class="container" >
-            <div class="row" >
-                <div class="span3" >
-                    <div class="property-filter pull-right" style="display:none;">
-                        <div class="content">
-                            <form method="POST" action="index.php?page=main">
-	                            <div class="type control-group">
-	                            	<label class="control-label" style="font-size:24px;" for="inputLocation">
-                                        ชำระเงิน
-                                    </label>
-                                    
-                                    <label class="control-label" style="margin-top:10px; margin-bottom:20px; border-bottom: 1px solid white;" for="inputLocation">
-                                       
-                                    </label>
-
-	                            </div>
-                                <div class="location control-group">
-                                    <label class="control-label"  style="margin-top:20px;" for="inputLocation">
-                                        สถานศึกษา
-                                    </label>
-                                    <div class="controls">
-                                        <!-- <select id="inputLocation3" name="university_id">
-                                        	<?php
-				                        		$cmd ="SELECT * FROM university ORDER BY university_name ASC";
-									            $result= $database->query($cmd);
-									            $nums=mysql_num_rows($result);
-									            for($i=0;$i<$nums;$i++){
-										        	$row = mysql_fetch_array($result);
-										        	?>
-										        		<option value="<?php echo $row["university_id"]?>"><?php echo $row["university_name"]?></option>
-										        	<?php
-										        }
-		
-			                        		?>
-                                        </select> -->
-                                    </div><!-- /.controls -->
-                                </div><!-- /.control-group -->
-
-                                <div class="type control-group">
-                                    <label class="control-label" for="inputType"  style="margin-top:20px;">
-                                        รหัสการชำระเงิน (Invoice ID)
-                                    </label>
-                                    <div class="controls">
-                                    	<input type="text" placeHolder="Invoice ID" name="invoice_info_id" />
-                                    </div><!-- /.controls -->
-                                </div><!-- /.control-group -->
-
-                               
-                                <div class="form-actions">
-                                    <input type="submit" value="ค้นหารายการ" style="margin-top:20px;" class="btn btn-primary btn-large">
-                                </div><!-- /.form-actions -->
-                                <input type="hidden" name="action" id="action" value="search" />
-                            </form>
-                        </div><!-- /.content -->
-                    </div><!-- /.property-filter -->
-                </div><!-- /.span3 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
     </div><!-- /.map -->
 </div><!-- /.map-wrapper -->
 
@@ -225,13 +167,14 @@
 	 		<div class="text1">เลือกคอร์สเรียนสำหรับคุณ</div>
 	 		<div class="text2">คอร์สเรียนจากโรงเรียนชื่อดังที่มีให้เลือกมากมายและสามารถชำระเงินไดทันที</div>
 	 	</div>
+	 	<a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
  	</div>
  </div>
 
 
  <div class="partners" style="background-color:#FFF;">
 
- 	<div style="font-size:40px; text-align:center; padding:40px 0;">สถาบันเข้าร่วมโครงการ</div>
+ 	<div style="font-size:40px; text-align:center; padding:40px 0;">สถาบันที่เข้าร่วมโครงการ</div>
 
 						<div class="content">
 					        

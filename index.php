@@ -243,21 +243,39 @@ else if(file_exists("pages/".$_GET['page'].".php") && $_GET['page'])
     
 <div id="footer-wrapper" style="display:block; height:auto;">
     <div id="footer">
-        <div id="footer-inner">
-            <div class="row">
-                <div style="width:40%; margin:0 auto;">
-                    <div class=" footer-nav">
+        <div class="row-fluid">
+
+            <div class="span6">
+                <div class="footer-inner">
+                    <img style="width:40px;" src="assets/img/social_icon/fb_icon.png">
+                    <img style="width:40px;" src="assets/img/social_icon/twitter_icon.png">
+                </div>
+            </div>
+
+            <div class="span6">
+                <div class="footer-inner">
+                    <div class="footer-nav">
+                        <a href="#">เงื่อนไขการให้บริการ</a>
                         <a href="#">ความช่วยเหลือ</a>
                         <a href="#">ข้อมูลความปลอดภัย</a>
                         <a href="#">เกียวกับเรา</a>
                         <a href="#">ติดต่อเรา</a>
                     </div>
-                    <div class=" copyright">
-                        © Copyright 2014 by Payportal. All rights reserved.
-                    </div>
                 </div>
-               
             </div>
+
+            <!-- <div style="width:40%; margin:0 auto;">
+                <div class=" footer-nav">
+                    <a href="#">ความช่วยเหลือ</a>
+                    <a href="#">ข้อมูลความปลอดภัย</a>
+                    <a href="#">เกียวกับเรา</a>
+                    <a href="#">ติดต่อเรา</a>
+                </div>
+                <div class=" copyright">
+                    © Copyright 2014 by Payportal. All rights reserved.
+                </div>
+            </div> -->
+           
         </div>
     </div>
 </div><!-- /#footer-wrapper -->

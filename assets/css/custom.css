@@ -516,7 +516,12 @@ ul.header-nav-list li a{
 }
 
 .custom-btn-1{
-	width: 400px !important;
+	width: 400px;
+	font-family: sukhumvit_settext !important;
+}
+
+.custom-btn-2{
+	margin-top: 4px;
 	font-family: sukhumvit_settext !important;
 }
 
@@ -529,9 +534,9 @@ ul.header-nav-list li a{
 }
 
 .footer-nav{
-	text-align: center;
+	text-align: right;
 	padding: 0 0 5px 0;
-	border-bottom: 1px solid #FFF;
+	/*border-bottom: 1px solid #FFF;*/
 }
 
 .footer-nav a{
@@ -539,6 +544,7 @@ ul.header-nav-list li a{
 	text-decoration: none;
 	font-size: 18px;
 	margin: 0 10px;
+	line-height: 30px;
 }
 
 .footer-nav a:hover{
@@ -767,4 +773,8 @@ table.table thead td{
 
 table.table tbody td{
 	font-size: 22px;
+}
+
+.footer-inner{
+	padding: 0 20px;
 }
