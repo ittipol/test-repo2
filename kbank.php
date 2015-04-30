@@ -13,12 +13,12 @@
             $data = array(
                 "MERCHANT2" => "451001605682521",
                 "TERM2" => "70352168",
-                "AMOUNT2" => "1000", // price of product, accept only 12 character
+                "AMOUNT2" => "0000001000", // price of product, accept only 12 character
                 "URL2" => "http://pp/kbank.php", // go back to page
                 "RESPURL" => "https://pp/kbank.php", // this url is require SSL certification at least 128 bit
                 "IPCUST2" => "128.199.64.178", // server ip address of merchant website
                 "DETAIL2" => "Payment Test", // detail of product or service
-                "INVMERCHANT" => "150429173450", // invoice number, only digit
+                "INVMERCHANT" => "150429174559", // invoice number, only digit
                 "FILLSPACE" => "", // want to know card type, input only Y or N
                 "SHOPID" => "",
                 "PAYTERM2" => "", // month
@@ -32,7 +32,7 @@
 
             $checksum = md5($str);
 
-            echo $str."<br/>".$checksum;;
+            echo $str."<br/>".$checksum;
 
         ?>
 
@@ -48,7 +48,7 @@
             <input type="hidden" id="FILLSPACE" name="FILLSPACE" value="">  <!--Option-->
             <input type="text" name="SHOPID" id="SHOPID" value="">  <!--Option-->
             <input type="text" id="PAYTERM2" name="PAYTERM2" value="">  <!--Option-->
-            <input type="text" id="CHECKSUM" value="<?php echo $checksum; ?>">
+            <input type="text" id="CHECKSUM" name="checksum" value="<?php echo $checksum; ?>">
 
             <input type="submit"> 
         </form>

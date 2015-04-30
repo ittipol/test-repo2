@@ -20,7 +20,8 @@
 <body>K-Payment Gateway Test Page<br/>
 <!--<form name=sendform method=post action="https://rt05.kasikornbank.com/mobilepay/payment.aspx">-->
 <!--<form name=sendform method=post action="https://rt05.kasikornbank.com/pggroup/payment.aspx">-->
-<form name=sendform method=post action="https://rt05.kasikornbank.com/pgpayment/payment.aspx">
+<!-- <form name=sendform method=post action="https://rt05.kasikornbank.com/pgpayment/payment.aspx"> -->
+<form name=sendform method=post action="https://uatkpgw.kasikornbank.com/pgpayment/payment.aspx">
 <table style="width:1300px">
 <tr>
 <td class="style1">Merchant ID :</td>

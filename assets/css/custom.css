@@ -766,6 +766,10 @@ ul.header-nav-list li a{
 	line-height: 24px;
 }
 
+table.table thead th{
+	font-size: 24px;
+}
+
 table.table thead td{
 	font-size: 22px;
 	font-weight: bold;

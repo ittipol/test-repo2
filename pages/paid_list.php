@@ -16,13 +16,20 @@
 
     $result= $database->query($cmd);
     $nums=mysql_num_rows($result);
-    $row = mysql_fetch_array($result);
+   
+   	$hasData = true;
 
     if($nums > 1){
 
-    }else{
+    }elseif ($nums == 1){
+
+    	// get invoice data
+    	$row = mysql_fetch_array($result);
     	$_SESSION['ID'] = $row['invoice_id'];
+
     	redirect("index.php?page=invoiceinfo");
+    }else{
+    	$hasData = false;
     }
 
 ?>
@@ -73,8 +80,8 @@
 
 				    		<?php }else{ ?>
 
-				    			<h2>ไม่พบข้อมูลหลักสูตร</h2>
-				    			<a href="index.php?page=course">กลับ</a>
+				    			<h2>ยังไม่มีรายการชำระเงินของคุณ</h2>
+				    			<a style="font-size:22px;" href="index.php?page=course">กลับ</a>
 
 				    		<?php } ?>
 

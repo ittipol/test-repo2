@@ -5,106 +5,106 @@
 		exit;
 	}
 
-	require_once('inc/mail.php');
+	// require_once('inc/mail.php');
 
-	$cmd ="SELECT * FROM invoice INNER JOIN university ON invoice.university_id = university.university_id WHERE invoice.invoice_id = '".$_SESSION['ID']."' LIMIT 1";
-    $result= $database->query($cmd);
-    $nums=mysql_num_rows($result);
-    $row = mysql_fetch_array($result);
-     if($_GET['nID'] != '')
-     {
-	    $cmdUpdate ="UPDATE invoice SET member_id = ".$_SESSION['member_id'].", invoice_info_payed_date = NOW(), invoice_info_status = 'ชำระเงินเรียบร้อยเเล้ว' WHERE invoice_id = ".$_GET['nID'];
-        $resultUpdate = $database->query($cmdUpdate);
-     }  
+	// $cmd ="SELECT * FROM invoice INNER JOIN university ON invoice.university_id = university.university_id WHERE invoice.invoice_id = '".$_SESSION['ID']."' LIMIT 1";
+ //    $result= $database->query($cmd);
+ //    $nums=mysql_num_rows($result);
+ //    $row = mysql_fetch_array($result);
+ //     if($_GET['nID'] != '')
+ //     {
+	//     $cmdUpdate ="UPDATE invoice SET member_id = ".$_SESSION['member_id'].", invoice_info_payed_date = NOW(), invoice_info_status = 'ชำระเงินเรียบร้อยเเล้ว' WHERE invoice_id = ".$_GET['nID'];
+ //        $resultUpdate = $database->query($cmdUpdate);
+ //     }  
 
-	if(!$row['mail_sended']){
+	// if(!$row['mail_sended']){
 
-		$to = array('ittipol@khroton.com','ittipol_master@hotmail.com');
-		$today = date("d/n/Y");   
+	// 	$to = array('ittipol@khroton.com','ittipol_master@hotmail.com');
+	// 	$today = date("d/n/Y");   
 
-		$message = 
-		'<table width="540" cellspacing="0" cellpadding="0" border="0" style="width:405.0pt;background:white;">
-			<tbody>
-				<tr>
-					<td width="540"></td>
-						<tr>
-							<td style="padding:20px;">
-								<table align="left">
-									<tbody>
-										<tr align="left">
-											<td width="170"><img src="http://www.zhake.com/web/image/data/logo.png" style="width:180px;"></td>
-											<td width="370">
-												<p align="right" style="font-size:9.0pt;text-align:right;font-family:Arial, sans-serif;">
-													<strong style="font-size:11.5pt;"> ใบเสร็จรับเงิน </strong> <br>
-													เลขที่คำสั่งซื้อ: <strong>{%invoice%}</strong> <br>
-													วันที่สั่งซื้อ: <strong>{%today%}</strong> <br>
-												</p>
-											</td>
-										</tr>
-										<tr align="left">
-											<td width="100%" colspan="2">
-												<p style="font-size:13.5pt;font-family:Arial, sans-serif;">
-													<strong>รายละเอียดการชำระเงิน</strong>
-												</p>
-											</td>
-											<td>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<table style="width:100%;">
-									<tbody>
-										<tr>
-											<td>
-												{%detail%}
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</td>
-						</tr>
-					<td>
-				</tr>
-			</tbody>
-		<table>';
+	// 	$message = 
+	// 	'<table width="540" cellspacing="0" cellpadding="0" border="0" style="width:405.0pt;background:white;">
+	// 		<tbody>
+	// 			<tr>
+	// 				<td width="540"></td>
+	// 					<tr>
+	// 						<td style="padding:20px;">
+	// 							<table align="left">
+	// 								<tbody>
+	// 									<tr align="left">
+	// 										<td width="170"><img src="http://www.zhake.com/web/image/data/logo.png" style="width:180px;"></td>
+	// 										<td width="370">
+	// 											<p align="right" style="font-size:9.0pt;text-align:right;font-family:Arial, sans-serif;">
+	// 												<strong style="font-size:11.5pt;"> ใบเสร็จรับเงิน </strong> <br>
+	// 												เลขที่คำสั่งซื้อ: <strong>{%invoice%}</strong> <br>
+	// 												วันที่สั่งซื้อ: <strong>{%today%}</strong> <br>
+	// 											</p>
+	// 										</td>
+	// 									</tr>
+	// 									<tr align="left">
+	// 										<td width="100%" colspan="2">
+	// 											<p style="font-size:13.5pt;font-family:Arial, sans-serif;">
+	// 												<strong>รายละเอียดการชำระเงิน</strong>
+	// 											</p>
+	// 										</td>
+	// 										<td>
+	// 										</td>
+	// 									</tr>
+	// 								</tbody>
+	// 							</table>
+	// 							<table style="width:100%;">
+	// 								<tbody>
+	// 									<tr>
+	// 										<td>
+	// 											{%detail%}
+	// 										</td>
+	// 									</tr>
+	// 								</tbody>
+	// 							</table>
+	// 						</td>
+	// 					</tr>
+	// 				<td>
+	// 			</tr>
+	// 		</tbody>
+	// 	<table>';
 
-		$search = array(
-				"{%today%}",
-				"{%invoice%}",
-				"{%detail%}",
-			);
+	// 	$search = array(
+	// 			"{%today%}",
+	// 			"{%invoice%}",
+	// 			"{%detail%}",
+	// 		);
 
-		$replace = array(
-				$today,
-				$row['invoice_info_id'],
-				$row['invoice_info_detail'],
-			);
+	// 	$replace = array(
+	// 			$today,
+	// 			$row['invoice_info_id'],
+	// 			$row['invoice_info_detail'],
+	// 		);
 
-		$message = str_replace($search, $replace, $message);
-	// echo $message;exit;
-		// send an email
-		$mail = new Mail();
-		$mail->protocol = 'smtp';
-		$mail->parameter = '';
-		$mail->hostname = 'ssl://smtp.gmail.com';
-		$mail->username = 'ittipol@khroton.com';
-		$mail->password = 'ittipol1q2w3e';
-		$mail->port = '465';
-		$mail->timeout = '5';			
-		//$mail->setTo('contactgroup@karmarts.co.th');
-		$mail->setFrom('ittipol@khroton.com');
-		$mail->setSender("ใบเสร็จรับเงิน");
-		$mail->setSubject("ใบเสร็จรับเงิน");
-		$mail->setHtml($message);
-		$mail->setText(html_entity_decode('ใบเสร็จรับเงิน', ENT_QUOTES, 'UTF-8'));
-		$mail->setTo($to);
-		$mail->send();
+	// 	$message = str_replace($search, $replace, $message);
+	// // echo $message;exit;
+	// 	// send an email
+	// 	$mail = new Mail();
+	// 	$mail->protocol = 'smtp';
+	// 	$mail->parameter = '';
+	// 	$mail->hostname = 'ssl://smtp.gmail.com';
+	// 	$mail->username = 'ittipol@khroton.com';
+	// 	$mail->password = 'ittipol1q2w3e';
+	// 	$mail->port = '465';
+	// 	$mail->timeout = '5';			
+	// 	//$mail->setTo('contactgroup@karmarts.co.th');
+	// 	$mail->setFrom('ittipol@khroton.com');
+	// 	$mail->setSender("ใบเสร็จรับเงิน");
+	// 	$mail->setSubject("ใบเสร็จรับเงิน");
+	// 	$mail->setHtml($message);
+	// 	$mail->setText(html_entity_decode('ใบเสร็จรับเงิน', ENT_QUOTES, 'UTF-8'));
+	// 	$mail->setTo($to);
+	// 	$mail->send();
 
-		// set mail sended = 1
-		$cmd = "UPDATE invoice SET `mail_sended` = '1' WHERE invoice_id = '".$row['invoice_id']."'";
-		$result= $database->query($cmd);
+	// 	// set mail sended = 1
+	// 	$cmd = "UPDATE invoice SET `mail_sended` = '1' WHERE invoice_id = '".$row['invoice_id']."'";
+	// 	$result= $database->query($cmd);
 
-	}
+	// }
 
 	$_SESSION['ID'] = '';
 

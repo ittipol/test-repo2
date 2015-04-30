@@ -1,4 +1,4 @@
-<?php
+<?php 
 	if($_POST['action'] == 'login')
 	{
 	
