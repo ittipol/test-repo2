@@ -8,6 +8,21 @@
     $nums=mysql_num_rows($result);
     $row = mysql_fetch_array($result);
 
+    // ============================================
+
+    $invoice_length = 10;
+	$cmd ="SELECT * FROM ref_code
+			WHERE id = 1";
+    $result= $database->query($cmd);
+
+    $cmd = "UPDATE ref_code
+    		SET code = code - 1
+    		WHERE id = 1";
+    $database->query($cmd);
+
+    $row2 = mysql_fetch_array($result);
+    $code = strval($row2['code']);
+
 ?>
 <!-- CONTENT -->
 <div id="content">
@@ -62,7 +77,9 @@
 			                            
 				                        </label>
 				                        <label class="control-label"  style="color:#009cde;text-align: left;">
-			                            <?php echo $row['invoice_info_referance_code']?>
+			                            <?php //echo $row['invoice_info_referance_code']
+			                            	echo $row2['code'];
+			                            ?>
 			                            
 				                        </label>
 
@@ -157,22 +174,10 @@
 
 <?php
 
-	$invoice_length = 10;
-	$cmd ="SELECT * FROM ref_code
-			WHERE id = 1";
-    $result= $database->query($cmd);
+    // $code = strval("145689541237");
 
-    $cmd = "UPDATE ref_code
-    		SET code = code - 1
-    		WHERE id = 1";
-    $database->query($cmd);
-
-    $row = mysql_fetch_array($result);
-    // $code = strval($row['code']);
-    $code = "150429174536";
-
-    // $code = $row['code'];
-    // $code_length = strlen($row['code']);
+    // $code = $row2['code'];
+    // $code_length = strlen($row2['code']);
 
     // for ($i=$code_length; $i < $invoice_length ; $i++) { 
     // 	$code = "0".$code;
@@ -207,7 +212,8 @@
                 "RESPURL" => "https://pp/", // this url is require SSL certification at least 128 bit
                 "IPCUST2" => "128.199.64.178", // server ip address of merchant website
                 "DETAIL2" => "Payment Test", // detail of product or service
-                "INVMERCHANT" => "150429174536", // invoice number, only digit
+                // "INVMERCHANT" => "150429174536", // invoice number, only digit
+                "INVMERCHANT" => $code, // invoice number, only digit
                 "FILLSPACE" => "", // want to know card type, input only Y or N
                 "SHOPID" => "",
                 "PAYTERM2" => "", // month
