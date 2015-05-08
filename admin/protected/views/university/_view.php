@@ -1,6 +1,6 @@
 <?php
-/* @var $this UniversityController */
-/* @var $data University */
+/* @var $this Educational institutionController */
+/* @var $data Educational institution */
 ?>
 
 <div class="view">

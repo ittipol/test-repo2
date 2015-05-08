@@ -1,21 +1,21 @@
 <?php
-/* @var $this UniversityController */
-/* @var $model University */
+/* @var $this Educational institutionController */
+/* @var $model Educational institution */
 
 $this->breadcrumbs=array(
-	'Universities'=>array('index'),
+	'Educational institution'=>array('index'),
 	$model->university_id=>array('view','id'=>$model->university_id),
 	'Update',
 );
 
 $this->menu=array(
-	// array('label'=>'List University', 'url'=>array('index')),
-	array('label'=>'Create University', 'url'=>array('create')),
-	array('label'=>'View University', 'url'=>array('view', 'id'=>$model->university_id)),
-	array('label'=>'Manage University', 'url'=>array('admin')),
+	// array('label'=>'List Educational institution', 'url'=>array('index')),
+	array('label'=>'Create Educational institution', 'url'=>array('create')),
+	array('label'=>'View Educational institution', 'url'=>array('view', 'id'=>$model->university_id)),
+	array('label'=>'Manage Educational institution', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update University <?php echo $model->university_id; ?></h1>
+<h1>Update Educational institution <?php echo $model->university_id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

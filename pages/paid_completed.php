@@ -18,6 +18,7 @@
 	// 702 SGD
 	// 756 CHF
 	// FILLSPACE : card type
+
 // $_POST['HOSTRESP']= "00";
 	if($_SERVER['REQUEST_METHOD'] == "GET"){
 		redirect("/index.php?page=main");

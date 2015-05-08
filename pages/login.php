@@ -2,7 +2,13 @@
 	if($_POST['action'] == 'login')
 	{
 	
-		$cmd ="SELECT * FROM member WHERE member_email = '".$_POST['member_email']."' AND member_password = '".md5($_POST['member_password'])."' LIMIT 1";
+		$cmd ="SELECT * 
+				FROM member m
+				INNER JOIN university u
+				ON (m.university_id = u.university_id)
+				WHERE member_email = '".$_POST['member_email']."' 
+				AND member_password = '".md5($_POST['member_password'])."' 
+				LIMIT 1";
         $result = $database->query($cmd);
         $nums = mysql_num_rows($result);
         if($nums > 0)
@@ -11,6 +17,7 @@
 	        $_SESSION['isLogin'] = 'Yes';
 	        $_SESSION['member_id'] = $row['member_id'];
 	        $_SESSION['fullname'] = $row['member_firstname'] .' '. $row['member_lastname'];
+	        $_SESSION['school_logo'] = $row['logo']; 
 	        redirect("index.php?page=".$_SESSION['currentPage']);
         }
         else

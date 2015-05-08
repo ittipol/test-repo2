@@ -147,7 +147,7 @@
 	</div>
 </div>
 
-<div id="booking-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/study_course.jpg);background-size:cover;background-position:center;" >
+<div id="booking-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/booking.jpg);background-size:cover;background-position:center;" >
 	<div class="boxText5" style="margin-left:47%;" >
  		<h2>เข้าถึงการเรียนรู้ที่คุณต้องการ</h2>
  		<div class="sub-text-box">

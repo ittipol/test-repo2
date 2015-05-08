@@ -43,15 +43,15 @@ $cs->registerScriptFile($baseUrl.'/js/lib/google-chart.js');
 
 <script src="<?php echo $baseUrl; ?>/js/ckeditor/ckeditor.js"></script>
 
-<?php if(!Yii::app()->user->isGuest){ ?>
+<?php if(!Yii::app()->user->isGuest && Yii::app()->user->getState('is_top_admin')){ ?>
 
 <style type="text/css">
 
-.brand{
+/*.brand{
     padding: 0 !important;
     margin-right: 10px;
 }
-
+*/
 </style>
 
 <?php } ?>
@@ -64,6 +64,7 @@ $cs->registerScriptFile($baseUrl.'/js/lib/google-chart.js');
 <h4>DEBUG LOG</h4>
 <pre></pre></p>
 -->
+
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">

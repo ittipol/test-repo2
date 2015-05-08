@@ -122,7 +122,7 @@
 		</div>
 	</div> -->
 
-	<div class="chart c-full" style="width:200px;">
+	<!-- <div class="chart c-full" style="width:200px;">
 		<h4>จำนวนทียังไม่ได้จ่าย</h4>
 		<div class="dashboard-content">
 			<div id="chart2" style="width: 100%; height: 100%;"></div>
@@ -134,7 +134,29 @@
     <div class="dashboard-content">
       <div id="chart3" style="width: 100%; height: 100%;"></div>
     </div>
+  </div> -->
+
+  <?php if(Yii::app()->user->getState('is_top_admin')){ ?>
+
+  <div class="clearfix" style="padding-top:20px; padding-bottom:20px;">
+    <div style="float:left; height:80px; margin-right:20px;">
+      <img src="<?php echo Yii::app()->user->getState('school_logo'); ?>" style="height:100px;" />
+    </div>
+    <div style="float:left;">
+      <div>ระบบบจัดการข้อมูล</div>
+      <div style="font-size:20px;"><?php echo Yii::app()->user->getState('school_name'); ?></div>
+    </div>
   </div>
 
+  <?php }else{ ?>
+
+  <div class="clearfix" style="padding-top:20px; padding-bottom:20px;">
+    <div>ระบบบจัดการข้อมูล</div>
+    <div style="font-size:20px;">คูณเข้าระบบด้วยสิทธิ Administrator</div>
+  </div>
+
+  <?php } ?>
+
+  <hr/>
 
 </div>

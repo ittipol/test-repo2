@@ -12,6 +12,7 @@ if(isset($_GET['action']) && ($_GET['action'] == 'logout'))
 	$_SESSION['member_id'] = '';
 	$_SESSION['fullname'] = '';
 	$_SESSION['ID'] = '';
+    $_SESSION['school_logo'] = '';
 }
 
 // $class = array(
@@ -131,14 +132,20 @@ if(isset($_GET['action']) && ($_GET['action'] == 'logout'))
 	                                        if($_SESSION['isLogin'] == 'Yes')
 	                                        {
 		                                        ?>
+
 		                                        <a class="list-your-property logout-image wrapper" style="margin-left:10px; padding:20px; float:right; margin-bottom:10px;" href="index.php?action=logout">
 	                                              <div class="tooltip-lower">ออกจากระบบ</div>
 	                                            </a>
 	                                            <a class="list-your-property history-image wrapper" style="margin-left:10px; padding:20px; float:right;" href="index.php?page=history">
 	                                              <div class="tooltip-lower">ประวัติการชำระเงิน</div>
 	                                            </a>
-	                                            <span class="btn btn-primary btn-large list-your-property "><?php echo $_SESSION['fullname']?></span> 
-		                                        <?php
+	                                            <span class="btn btn-primary btn-large list-your-property" style="margin-left:10px;"><?php echo $_SESSION['fullname']?></span> 
+		                                        
+                                                <!-- <a class="list-your-property" style="float:right; margin-bottom:10px;" href="javascript:void(0);">
+                                                    <img style="width:42px; height:42px;" src="<?php //echo $_SESSION['school_logo']; ?>">
+                                                </a> -->
+
+                                                <?php
 	                                        }
 	                                        else
 	                                        {
@@ -226,7 +233,6 @@ if(isset($_GET['action']) && ($_GET['action'] == 'logout'))
 <?php
 if(is_null($_GET['page']))
 {
-	
 	redirect("index.php?page=main");
 		//require_once("pages/dashboard.php");
 }

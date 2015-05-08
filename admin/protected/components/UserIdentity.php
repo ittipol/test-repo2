@@ -28,7 +28,16 @@ class UserIdentity extends CUserIdentity
 			$this->setState('name', $data->firstname." ".$data->lastname);
 			$this->setState('role', $data->role);
 			$this->setState('university_id', $data->university_id);
-			$this->setState('logo', $data->university->logo);
+
+			if($data->university){
+				$this->setState('is_top_admin', true);
+				$this->setState('school_logo', $data->university->logo);
+				$this->setState('school_name', $data->university->university_name);
+			}else{
+				$this->setState('is_top_admin', false);
+				$this->setState('school_logo', "");
+				$this->setState('school_name', "");
+			}
 
 			$this->errorCode=self::ERROR_NONE;
 		}else{

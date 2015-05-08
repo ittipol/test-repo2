@@ -103,15 +103,24 @@ class UserController extends Controller
 
 		}
 
-		// get school name
-		$school_data = School::model()->findAll();
-		
-		$schools = array();
-		foreach ($school_data as $data) {
-			$schools[$data->university_id] = $data->school_name;
+		// get Educational institution
+		$edu_inst_data = University::model()->findAll();
+
+		$edu_inst = array();
+		foreach ($edu_inst_data as $data) {
+			$edu_inst[$data->university_id] = $data->university_name;
 		}
 
-		$this->data['schools'] = $schools;
+		// get school name
+		// $school_data = School::model()->findAll();
+		
+		// $schools = array();
+		// foreach ($school_data as $data) {
+		// 	$schools[$data->university_id] = $data->school_name;
+		// }
+
+		// $this->data['schools'] = $schools;
+		$this->data['edu_inst'] = $edu_inst;
 		$this->data['university_id'] = Yii::app()->user->getState('university_id');
 		$this->data['scenario'] = "insert";
 		$this->data['model'] = $model;
@@ -162,14 +171,14 @@ class UserController extends Controller
 
 
 		// get school name
-		$school_data = School::model()->findAll();
+		// $school_data = School::model()->findAll();
 		
-		$schools = array();
-		foreach ($school_data as $data) {
-			$schools[$data->university_id] = $data->school_name;
-		}
+		// $schools = array();
+		// foreach ($school_data as $data) {
+		// 	$schools[$data->university_id] = $data->school_name;
+		// }
 
-		$this->data['schools'] = $schools;
+		// $this->data['schools'] = $schools;
 		$this->data['university_id'] = Yii::app()->user->getState('university_id');
 		$this->data['scenario'] = "update";
 		$this->data['model'] = $model;
