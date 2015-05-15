@@ -208,7 +208,7 @@
                 "MERCHANT2" => "451001605682521",
                 "TERM2" => "70352168",
                 "AMOUNT2" => $amount, // price of product, accept only 12 character
-                "URL2" => "http://pp/index.php?page=paid_completed", // go back to page
+                "URL2" => "http://eportal.asia/index.php?page=paid_completed", // go back to page
                 "RESPURL" => "https://pp/", // this url is require SSL certification at least 128 bit
                 "IPCUST2" => "128.199.64.178", // server ip address of merchant website
                 "DETAIL2" => "Payment Test", // detail of product or service

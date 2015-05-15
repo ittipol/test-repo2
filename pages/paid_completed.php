@@ -18,7 +18,6 @@
 	// 702 SGD
 	// 756 CHF
 	// FILLSPACE : card type
-
 // $_POST['HOSTRESP']= "00";
 	if($_SERVER['REQUEST_METHOD'] == "GET"){
 		redirect("/index.php?page=main");
@@ -62,6 +61,7 @@
 		if(!$row['mail_sended']){
 
 			$to = array('ittipol@khroton.com','ittipol_master@hotmail.com');
+			//$to = array('ittipol@khroton.com','khunphiphat@zhake.com');
 			$today = date("d/n/Y");   
 
 			$message = 

@@ -61,7 +61,7 @@
 
     <?php if($_SESSION['isLogin'] == ""){ ?>
 
-	    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/sign-up.jpg);background-size:cover;background-position:center;" >
+	    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/guest.jpg);background-size:cover;background-position:center center;" >
 		    <div id="signup-box" style="text-align:center;">
 			    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div>
 			    <div class="partners">
@@ -72,11 +72,11 @@
 	
  	<?php }else{ // logged in ?>
 
-	 	<div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/logged-in.jpg);background-size:cover;background-position:center;" >
+	 	<div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/logged_in.jpg);background-size:cover; background-position:top center;" >
 		    <div id="signup-box" style="text-align:center;">
 			    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">ยินดีต้อนรับคุณ <?php echo $_SESSION['fullname']?></div>
 			    <div class="partners">
-		            <a href="index.php?page=paid_list" class="btn btn-primary btn-large list-your-property custom-btn-1">ชำระเงินทันที</a>
+		            <a href="index.php?page=paid_list" class="btn btn-primary btn-large list-your-property custom-btn-1">ชำระค่าเทอมทันที</a>
 				</div>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
 				<div class="cell-header clearfix">
 					<img class="cell-img" src="assets/img/icon/icon-payment.png" />
 					<div class="cell-text">
-						<a href="javascript:void(0);">Payportal</a>
+						<a href="javascript:void(0);" onclick="slideTo('payment-section');">Payportal</a>
 					</div>
 				</div>
 				<div class="cell-footer">
@@ -126,20 +126,38 @@
 			</div>
 		</div>
  	</div>
- 	
- 	<div id="e-lib-section" class="section1" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/header.png);background-size:cover;background-position:center;" >
-	    <div class="boxText0">
-	 		<h2 style="display:block;">ห้องสมุดอิเล็กทรอนิกส์</h2>
-	 		<div class="sub-text-box">
-		 		<div class="text1">ห้องสมุดของคุณ</div>
-		 		<div class="text2" style="color: #FFFFFF;">มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา</div>
-			</div>
-			<a href="http://www.zhake.com/web/index.php?route=api/apipp/elib" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
-	 	</div>
-	 </div>
 
     </div><!-- /.map -->
 </div><!-- /.map-wrapper -->
+
+<!-- Payportal Main Service -->
+<div id="payment-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/payment.jpg);background-size:cover;background-position:center;" >
+	<div class="boxText5" style="margin-left:47%;" >
+ 		<h2>ชำระเงินได้ทันที</h2>
+ 		<div class="sub-text-box">
+	 		<div class="text1">ปลอดภัยและรวดเร็ว</div>
+	 		<div class="text2">ชำระเงินได้ง่ายๆ และปลอดภัยกว่าในการชำระค่าใช้จ่ายของสถาบันการศึกษาชั้นนำหลายพันแห่ง</div>
+	 	</div>
+	 	<a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-2" style="float:left;">ชำระค่าเทอมทันที</a>
+ 	</div>
+ </div>
+
+<div class="row" style="height:10px; background-color:#06a7ea;">
+	<div style="text-align: center;">
+		<!-- <a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a> -->
+	</div>
+</div>
+
+ <div id="e-lib-section" class="section1" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/library.jpg);background-size:cover;background-position:center;" >
+    <div class="boxText0">
+ 		<h2 style="display:block;">ห้องสมุดอิเล็กทรอนิกส์</h2>
+ 		<div class="sub-text-box">
+	 		<div class="text1">ห้องสมุดของคุณ</div>
+	 		<div class="text2" style="color: #FFFFFF;">มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา</div>
+		</div>
+		<a href="http://www.zhake.com/web/index.php?route=api/apipp/elib" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
+ 	</div>
+ </div>
 
 <div class="row" style="height:10px; background-color:#06a7ea;">
 	<div style="text-align: center;">
@@ -221,8 +239,9 @@
 
 <script type="text/javascript">
 
+	// First Banner handle displaying full screen on any resolution
 	var h = window.innerHeight;
-	var btmh = 90 + 180;
+	var btmh = 90 + 180; // header bar + below first banner
 	var v = h-btmh;
 	var e = document.getElementById("signup-section");
 	e.style.height = v+"px";

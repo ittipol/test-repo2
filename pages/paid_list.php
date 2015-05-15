@@ -41,6 +41,8 @@
 	        	<div id="main">
 	            	<div class="partners">
 
+	            		<?php if($_SESSION['isLogin'] == 'Yes'){ ?>
+
             			<div class="content" style="margin-top:40px;">
 			            	
 				    		<?php if($nums > 0){ ?>
@@ -86,6 +88,16 @@
 				    		<?php } ?>
 
 					    </div>
+
+					    <?php }else{ ?>
+
+					    <div id="login_btn" class="row">
+			            	<div class="span12" align="center">
+			                		<a class="btn btn-primary btn-large list-your-property " style="background-color:#f46a6a;" href="index.php?page=login">คุณยังไม่ได้ login เข้าสู่ระบบ</a>
+			            	</div>
+			         	</div>
+
+					    <?php } ?>
 			        
 				    </div><!-- /.partners-->    
 				    
@@ -95,7 +107,22 @@
 		</div>
     </div><!-- /#content -->
 
+</div>
+
     <script type="text/javascript">
+
+    	window.onload = function(){
+
+			var wH = window.innerHeight;
+			var h = 90 + 90;
+			var hh = wH - h;
+		
+			var elem = document.getElementById("login_btn");
+			// elem.style.height = hh+"px";
+			elem.style.lineHeight = hh+"px";
+
+		}
+
     	function setData(id){
     		document.getElementById("hidden-id").value = id;
     		document.getElementById("frm").submit();

@@ -36,7 +36,8 @@ body{
 }
 
 #content{
-	padding: 0 0 40px 0 !important;
+	/*padding: 0 0 40px 0 !important;*/
+	padding: 0 !important;
 }
 
 #header-wrapper{
@@ -59,7 +60,8 @@ body{
 
 .boxText0 h2{
 	font-size: 50px;
-	color: #FFF !important;
+	/*color: #FFF !important;*/
+	color: #06a7ea !important;
 }
 .boxText0 div.text1{
 	font-size: 30px;
@@ -74,7 +76,8 @@ body{
 
 .boxText5 h2{
 	font-size: 50px;
-	color: #FFF !important;
+	/*color: #FFF !important;*/
+	color: #06a7ea !important;
 }
 .boxText5 div.text1{
 	font-size: 30px;
@@ -757,8 +760,10 @@ ul.header-nav-list li a{
 }
 
 .cell-header .cell-text a{
-	color: #707070;
+	/*color: #707070;*/
+	color: #06a7ea;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 .cell-footer .cell-message{
