@@ -53,6 +53,7 @@
 
 					    				<thead>
 					    					<tr>
+					    						<td></td>
 					    						<td>รหัส</td>
 						    					<td>จำนวนเงิน</td>
 						    					<td>สถานะ</td>
@@ -63,6 +64,9 @@
 						    			<?php while ($row = mysql_fetch_array($result)) { ?>
 
 						    				<tr>
+						    					<td>
+						    						<input type="checkbox" value="<?php echo $row['invoice_info_id']; ?>" name="id[]">
+						    					</td>
 						    					<td><?php echo $row['invoice_info_id']; ?></td>
 						    					<td><?php echo $row['invoice_info_amount']; ?></td>
 						    					<td><?php echo $row['invoice_info_status']; ?></td>

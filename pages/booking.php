@@ -6,7 +6,7 @@
 	<div class="container">
 		<div>
 	        <div id="main">
-				<div id="page_message" style="font-size:40px; text-align:center;">Service is unavilable now</div>
+				<div id="page_message" style="font-size:40px; text-align:center;">Future Service</div>
 			</div>
 		</div>
 	</div>

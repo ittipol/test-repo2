@@ -21,7 +21,14 @@
     $database->query($cmd);
 
     $row2 = mysql_fetch_array($result);
+
+    // invoice code for test
     $code = strval($row2['code']);
+
+    // payment gateway
+    // 1 = k-bank
+    // 2 = t-bank
+    $paymeny_gateway = 2;
 
 ?>
 <!-- CONTENT -->
@@ -130,7 +137,7 @@
 			                	<div class="span5">
 			                	
 				                    <div class="control-group" >
-			                        	<img src="assets/img/payment.png"  />
+			                        	<img src="assets/img/bank/thanachat_logo.jpg"  />
 			                        	
 				                     </div><!-- /.control-group -->		                
 			                    </div><!-- /.span4 -->
@@ -174,15 +181,6 @@
 
 <?php
 
-    // $code = strval("145689541237");
-
-    // $code = $row2['code'];
-    // $code_length = strlen($row2['code']);
-
-    // for ($i=$code_length; $i < $invoice_length ; $i++) { 
-    // 	$code = "0".$code;
-    // }
-
 	// amount format [0-9]{10} is interger and [0-9]{2} is point
 	$amount = $row['invoice_info_amount'];
 
@@ -202,48 +200,83 @@
 		$amount .= "00";
 	}
 
-    $gateway = "https://uatkpgw.kasikornbank.com/pgpayment/payment.aspx"; // url gateway
+	switch ($paymeny_gateway) {
+		case 1: // k-bank
+			
+			$gateway = "https://uatkpgw.kasikornbank.com/pgpayment/payment.aspx"; // url gateway
 
-    $data = array(
-                "MERCHANT2" => "451001605682521",
-                "TERM2" => "70352168",
-                "AMOUNT2" => $amount, // price of product, accept only 12 character
-                "URL2" => "http://eportal.asia/index.php?page=paid_completed", // go back to page
-                "RESPURL" => "https://pp/", // this url is require SSL certification at least 128 bit
-                "IPCUST2" => "128.199.64.178", // server ip address of merchant website
-                "DETAIL2" => "Payment Test", // detail of product or service
-                // "INVMERCHANT" => "150429174536", // invoice number, only digit
-                "INVMERCHANT" => $code, // invoice number, only digit
-                "FILLSPACE" => "", // want to know card type, input only Y or N
-                "SHOPID" => "",
-                "PAYTERM2" => "", // month
-                "md5_secret" => "SzabTAGU5fQYgHkVGU5f4re8pLw5423Q",
-            );
+		    $data = array(
+		                "MERCHANT2" => "451001605682521",
+		                "TERM2" => "70352168",
+		                "AMOUNT2" => $amount, // price of product, accept only 12 character
+		                "URL2" => "http://eportal.asia/index.php?page=paid_completed", // go back to page
+		                "RESPURL" => "https://pp/", // this url is require SSL certification at least 128 bit
+		                "IPCUST2" => "128.199.64.178", // server ip address of merchant website
+		                "DETAIL2" => "Payment Test", // detail of product or service
+		                // "INVMERCHANT" => "150429174536", // invoice number, only digit
+		                "INVMERCHANT" => $code, // invoice number, only digit
+		                "FILLSPACE" => "", // want to know card type, input only Y or N
+		                "SHOPID" => "",
+		                "PAYTERM2" => "", // month
+		                "md5_secret" => "SzabTAGU5fQYgHkVGU5f4re8pLw5423Q",
+		            );
 
-    $str = "";
-    foreach ($data as $key => $value) {
-        $str .= $value;
-    }
+		    $str = "";
+		    foreach ($data as $key => $value) {
+		        $str .= $value;
+		    }
 
-    $checksum = md5($str);
+		    $checksum = md5($str);
 
-?>
+		    ?>
 
-<form name="sendform" id="sendform" method="post" action="<?php echo $gateway; ?>"> 
-    <input type="hidden" id="MERCHANT2" name="MERCHANT2" value="<?php echo $data['MERCHANT2']; ?>">
-    <input type="hidden" id="TERM2" name="TERM2" value="<?php echo $data['TERM2']; ?>">
-    <input type="hidden" id="AMOUNT2" name="AMOUNT2" value="<?php echo $data['AMOUNT2']; ?>">
-    <input type="hidden" id="URL2" name="URL2" value="<?php echo $data['URL2']; ?>">
-    <input type="hidden" id="RESPURL" name="RESPURL" value="<?php echo $data['RESPURL']; ?>">
-    <input type="hidden" id="IPCUST2" name="IPCUST2" value="<?php echo $data['IPCUST2']; ?>"> 
-    <input type="hidden" id="DETAIL2" name="DETAIL2" value="<?php echo $data['DETAIL2']; ?>">
-    <input type="hidden" id="INVMERCHANT" name="INVMERCHANT" value="<?php echo $data['INVMERCHANT']; ?>">
-    <input type="hidden" id="FILLSPACE" name="FILLSPACE" value="">  <!--Option-->
-    <input type="hidden" name="SHOPID" id="SHOPID" value="">  <!--Option-->
-    <input type="hidden" id="PAYTERM2" name="PAYTERM2" value="">  <!--Option-->
-    <input type="hidden" id="CHECKSUM" name="checksum" value="<?php echo $checksum; ?>">
-</form>
-<?php
+			    <form name="sendform" id="sendform" method="post" action="<?php echo $gateway; ?>"> 
+				    <input type="hidden" id="MERCHANT2" name="MERCHANT2" value="<?php echo $data['MERCHANT2']; ?>">
+				    <input type="hidden" id="TERM2" name="TERM2" value="<?php echo $data['TERM2']; ?>">
+				    <input type="hidden" id="AMOUNT2" name="AMOUNT2" value="<?php echo $data['AMOUNT2']; ?>">
+				    <input type="hidden" id="URL2" name="URL2" value="<?php echo $data['URL2']; ?>">
+				    <input type="hidden" id="RESPURL" name="RESPURL" value="<?php echo $data['RESPURL']; ?>">
+				    <input type="hidden" id="IPCUST2" name="IPCUST2" value="<?php echo $data['IPCUST2']; ?>"> 
+				    <input type="hidden" id="DETAIL2" name="DETAIL2" value="<?php echo $data['DETAIL2']; ?>">
+				    <input type="hidden" id="INVMERCHANT" name="INVMERCHANT" value="<?php echo $data['INVMERCHANT']; ?>">
+				    <input type="hidden" id="FILLSPACE" name="FILLSPACE" value="">  <!--Option-->
+				    <input type="hidden" name="SHOPID" id="SHOPID" value="">  <!--Option-->
+				    <input type="hidden" id="PAYTERM2" name="PAYTERM2" value="">  <!--Option-->
+				    <input type="hidden" id="CHECKSUM" name="checksum" value="<?php echo $checksum; ?>">
+				</form>
+
+		    <?php
+
+			break;
+		
+		case 2: // t-bank
+			
+			$gateway = "https://uatkpgw.kasikornbank.com/pgpayment/payment.aspx"; // url gateway
+
+			$data = array(
+		                "MERID" => "",
+		                "TERMINALID" => "",
+		                "PAYMENTFOR" => "",
+		                "INVOICENO" => "",
+		                "AMOUNT" => "",
+		                "POSTURL" => "",
+		                "POSTURL2" => "",
+		                "AUTOREDIRECT" => "",
+
+		            );
+
+			?>
+
+				<!-- <form name="sendform" id="sendform" method="post" action="<?php echo $gateway; ?>"> 
+
+				</form> -->
+
+			<?php
+
+			break;
+	}
+
+
 	$_SESSION['currentPage'] = 'billing';
 ?>
 

@@ -43,15 +43,6 @@
 			
 	}
 
-	$service_url = "http://www.zhake.com/web/index.php?route=api/apipp/getBestSeller";
-
-	$api = new ApiCaller();
-	//$api->setServiceUrl($service_url);
-	//$response = $api->post($post_data);
-	//$response = json_decode($response,true);
-
-	$response = array();
-
 ?>
 
  <!-- CONTENT -->
@@ -63,9 +54,11 @@
 
 	    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/guest.jpg);background-size:cover;background-position:center center;" >
 		    <div id="signup-box" style="text-align:center;">
-			    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div>
+		    	<div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">ชำระเงินได้ทันที</div>
+		    	<div style="font-size:30px; color:#FFF; padding:0 0 30px 0;">ชำระเงินได้ง่ายๆ และปลอดภัยกว่าในการชำระค่าใช้จ่ายของสถาบันการศึกษาชั้นนำหลายพันแห่ง</div>
+			    <!-- <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div> -->
 			    <div class="partners">
-		            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1">สมัครสมาชิก</a>
+		            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1">ลงทะเบียน</a>
 				</div>
 			</div>
 		</div>
@@ -131,7 +124,7 @@
 </div><!-- /.map-wrapper -->
 
 <!-- Payportal Main Service -->
-<div id="payment-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/payment.jpg);background-size:cover;background-position:center;" >
+<!-- <div id="payment-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/payment.jpg);background-size:cover;background-position:center;" >
 	<div class="boxText5" style="margin-left:47%;" >
  		<h2>ชำระเงินได้ทันที</h2>
  		<div class="sub-text-box">
@@ -140,7 +133,7 @@
 	 	</div>
 	 	<a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-2" style="float:left;">ชำระค่าเทอมทันที</a>
  	</div>
- </div>
+ </div> -->
 
 <div class="row" style="height:10px; background-color:#06a7ea;">
 	<div style="text-align: center;">
@@ -155,7 +148,7 @@
 	 		<div class="text1">ห้องสมุดของคุณ</div>
 	 		<div class="text2" style="color: #FFFFFF;">มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา</div>
 		</div>
-		<a href="http://www.zhake.com/web/index.php?route=api/apipp/elib" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
+		<a href="http://thaidemo.ebook.hyread.com.tw/" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
  	</div>
  </div>
 
@@ -176,6 +169,20 @@
  	</div>
  </div>
 
+ <div class="row" style="height:10px; background-color:#06a7ea;">
+	<div style="text-align: center;">
+		<!-- <a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a> -->
+	</div>
+</div>
+
+<div class="panel">
+	<div style="text-align:center;">
+		<div class="partners">
+			<div style="font-size:40px; color:#000; padding:0 0 30px 0;">ลงทะเบียน</div>
+		    <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1">ลงทะเบียน</a>
+		</div>
+	</div>
+</div>
 
  <div class="partners" style="background-color:#FFF;">
 
