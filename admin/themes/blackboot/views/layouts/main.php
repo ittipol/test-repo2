@@ -23,12 +23,15 @@ $cs->registerCssFile($baseUrl.'/css/bootstrap.css');
 $cs->registerCssFile($baseUrl.'/css/bootstrap-responsive.css');
 $cs->registerCssFile($baseUrl.'/css/style.css');
 $cs->registerCssFile($baseUrl.'/js/jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.min.css');
+$cs->registerCssFile($baseUrl.'/css/flot.css');
 
 $cs->registerScriptFile($baseUrl.'/js/jquery-ui/js/jquery-ui-1.10.4.custom.min.js');
 $cs->registerScriptFile($baseUrl.'/js/tabs.js');
 $cs->registerScriptFile($baseUrl.'/js/lib/google-chart.js');
+$cs->registerScriptFile($baseUrl.'/js/jquery.flot.min.js');
 
 ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
