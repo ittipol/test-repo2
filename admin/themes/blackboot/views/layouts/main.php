@@ -28,7 +28,7 @@ $cs->registerCssFile($baseUrl.'/css/flot.css');
 $cs->registerScriptFile($baseUrl.'/js/jquery-ui/js/jquery-ui-1.10.4.custom.min.js');
 $cs->registerScriptFile($baseUrl.'/js/tabs.js');
 $cs->registerScriptFile($baseUrl.'/js/lib/google-chart.js');
-$cs->registerScriptFile($baseUrl.'/js/jquery.flot.min.js');
+$cs->registerScriptFile($baseUrl.'/js/jquery.flot.js');
 
 ?>
 

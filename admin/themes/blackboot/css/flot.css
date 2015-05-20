@@ -78,41 +78,6 @@
   .graph-info .visitors:before { background: #71c73e; }
   .graph-info .returning:before { background: #77b7c5; }
 
-  /* Lines & Bars Buttons */
-  #lines, #bars {
-      width: 34px;
-      height: 32px;
-      padding: 0;
-      margin-right: 0;
-      margin-left: 10px;
-      border-bottom: 2px solid #71c73e;
-      float: right;
-      cursor: pointer;
-  }
-   
-  #lines.active, #bars.active {
-      background: #82d344;
-      background: -moz-linear-gradient(top, #82d344 0%, #71c73e 100%);
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82d344), color-stop(100%,#71c73e));
-      background: -webkit-linear-gradient(top, #82d344 0%,#71c73e 100%);
-      background: -o-linear-gradient(top, #82d344 0%,#71c73e 100%);
-      background: -ms-linear-gradient(top, #82d344 0%,#71c73e 100%);
-      background: linear-gradient(to bottom, #82d344 0%,#71c73e 100%);
-  }
-   
-  #lines span, #bars span {
-      display: block;
-      width: 34px;
-      height: 32px;
-      background: url('../img/flot/lines.png') no-repeat 9px 12px;
-  }
-   
-  #bars span { background: url('../img/flot/bars.png') no-repeat center 10px; }
-   
-  #lines.active span { background-image: url('../img/flot/lines_active.png'); }
-   
-  #bars.active span { background-image: url('../img/flot/bars_active.png'); }
-
   /* Clear Floats */
   .graph-info:before, .graph-info:after,
   .graph-container:before, .graph-container:after {
@@ -145,3 +110,38 @@
       padding: 5px 10px;
       border: 1px solid #e1e1e1;
   }
+
+  /* Lines & Bars Buttons */
+  .lines, .bars {
+      width: 34px !important;
+      height: 32px !important;
+      padding: 0 !important;
+      margin-right: 0 !important;
+      margin-left: 10px !important;
+      border-bottom: 2px solid #71c73e !important;
+      float: right !important;
+      cursor: pointer !important;
+  }
+   
+  .lines.active, .bars.active {
+      background: #82d344;
+      background: -moz-linear-gradient(top, #82d344 0%, #71c73e 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82d344), color-stop(100%,#71c73e));
+      background: -webkit-linear-gradient(top, #82d344 0%,#71c73e 100%);
+      background: -o-linear-gradient(top, #82d344 0%,#71c73e 100%);
+      background: -ms-linear-gradient(top, #82d344 0%,#71c73e 100%);
+      background: linear-gradient(to bottom, #82d344 0%,#71c73e 100%);
+  }
+   
+  .lines span, .bars span {
+      display: block;
+      width: 34px;
+      height: 32px;
+      background: url('../img/flot/lines.png') no-repeat 9px 12px;
+  }
+   
+  .bars span { background: url('../img/flot/bars.png') no-repeat center 10px; }
+   
+  .lines.active span { background-image: url('../img/flot/lines_active.png'); }
+   
+  .bars.active span { background-image: url('../img/flot/bars_active.png'); }

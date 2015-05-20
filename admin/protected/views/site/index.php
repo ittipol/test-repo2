@@ -161,7 +161,7 @@
 
   <div>
 
-    <h2>Graph</h2>
+    <h2>ค่าทางสถิติ</h2>
 
     <div style="float:left;">
       <!-- Graph HTML -->
@@ -170,32 +170,32 @@
               <a href="javascript:void(0)" class="visitors">Visitors</a>
               <a href="javascript:void(0)" class="returning">Returning Visitors</a>
        
-              <a href="#" id="bars"><span></span></a>
-              <a href="#" id="lines" class="active"><span></span></a>
+              <a href="#" class="bars"><span></span></a>
+              <a href="#" class="lines active"><span></span></a>
           </div>
        
           <div class="graph-container">
-              <div id="graph-lines"></div>
-              <div id="graph-bars"></div>
+              <div id="graph-lines" class="graph-lines"></div>
+              <div id="graph-bars" class="graph-bars"></div>
           </div>
       </div>
       <!-- end Graph HTML -->
     </div>
 
-    <div style="float:left;">
+    <div style="float:left; margin-left: 50px;">
       <!-- Graph HTML -->
       <div id="graph-wrapper">
           <div class="graph-info">
-              <a href="javascript:void(0)" class="visitors">Visitors</a>
-              <a href="javascript:void(0)" class="returning">Returning Visitors</a>
+              <a href="javascript:void(0)" class="visitors">Income</a>
+              <a href="javascript:void(0)" class="returning">Profit</a>
        
-              <a href="#" id="bars"><span></span></a>
-              <a href="#" id="lines" class="active"><span></span></a>
+              <a href="#" class="bars"><span></span></a>
+              <a href="#" class="lines active"><span></span></a>
           </div>
        
           <div class="graph-container">
-              <div id="graph-lines"></div>
-              <div id="graph-bars"></div>
+              <div id="graph-lines2" class="graph-lines"></div>
+              <div id="graph-bars2" class="graph-bars"></div>
           </div>
       </div>
       <!-- end Graph HTML -->
@@ -206,6 +206,13 @@
 </div>
 
 <script type="text/javascript">
+
+  function showTooltip(x, y, contents) {
+      $('<div id="tooltip">' + contents + '</div>').css({
+          top: y - 16,
+          left: x + 20
+      }).appendTo('body').fadeIn();
+  }
 
   $(document).ready(function(){
 
@@ -221,8 +228,63 @@
       }
     ];
 
+    var graphData2 = [{
+          // Visits
+          data: [ [1, 1950], [2, 2500], [3, 2000] ],
+          color: '#71c73e'
+      }, {
+          // Returning Visits
+          data: [ [1, 850], [2, 750], [3, 1000] ],
+          color: '#77b7c5',
+          points: { radius: 4, fillColor: '#77b7c5' }
+      }
+    ];
+
+    // create any graphs
+    plotGraph('#graph-lines','#graph-bars', graphData);
+    setGraphHoverOver('#graph-lines','#graph-bars', '');
+    plotGraph('#graph-lines2','#graph-bars2', graphData2);
+    setGraphHoverOver('#graph-lines2','#graph-bars2', '');
+
+    // switch between graphs, when user click line or bar button
+    $('.lines').on('click', function (e) {
+        $(this.parentNode.querySelectorAll(".bars")).removeClass('active');
+        $(this.parentNode.parentNode.querySelectorAll(".graph-container .graph-bars")).fadeOut();
+        $(this).addClass('active');
+        $(this.parentNode.parentNode.querySelectorAll(".graph-container .graph-lines")).fadeIn();
+        e.preventDefault();
+    });
+
+    $('.bars').on('click', function (e) {
+        $(this.parentNode.querySelectorAll(".lines")).removeClass('active');
+        $(this.parentNode.parentNode.querySelectorAll(".graph-container .graph-lines")).fadeOut();
+        $(this).addClass('active');
+        $(this.parentNode.parentNode.querySelectorAll(".graph-container .graph-bars")).fadeIn().removeClass('hidden');
+        e.preventDefault();
+    });
+
+    // $('#lines').on('click', function (e) {
+    //     $('#bars').removeClass('active');
+    //     $('#graph-bars').fadeOut();
+    //     $(this).addClass('active');
+    //     $('#graph-lines').fadeIn();
+    //     e.preventDefault();
+    // });
+     
+    // $('#bars').on('click', function (e) {
+    //     $('#lines').removeClass('active');
+    //     $('#graph-lines').fadeOut();
+    //     $(this).addClass('active');
+    //     $('#graph-bars').fadeIn().removeClass('hidden');
+    //     e.preventDefault();
+    // });
+
+  });
+
+  function plotGraph(graphLineElem, graphBarElem, graphData){
+
     // Lines
-    $.plot($('#graph-lines'), graphData, {
+    $.plot($(graphLineElem), graphData, {
         series: {
             points: {
                 show: true,
@@ -241,7 +303,7 @@
         },
         xaxis: {
             tickColor: 'transparent',
-            tickDecimals: 2
+            tickDecimals: 0
         },
         yaxis: {
             tickSize: 1000
@@ -249,7 +311,7 @@
     });
      
     // Bars
-    $.plot($('#graph-bars'), graphData, {
+    $.plot($(graphBarElem), graphData, {
         series: {
             bars: {
                 show: true,
@@ -266,55 +328,37 @@
         },
         xaxis: {
             tickColor: 'transparent',
-            tickDecimals: 2
+            tickDecimals: 0
         },
         yaxis: {
             tickSize: 1000
         }
     });
 
-  });
+    $(graphBarElem).hide();
 
-  $('#graph-bars').hide();
- 
-  $('#lines').on('click', function (e) {
-      $('#bars').removeClass('active');
-      $('#graph-bars').fadeOut();
-      $(this).addClass('active');
-      $('#graph-lines').fadeIn();
-      e.preventDefault();
-  });
-   
-  $('#bars').on('click', function (e) {
-      $('#lines').removeClass('active');
-      $('#graph-lines').fadeOut();
-      $(this).addClass('active');
-      $('#graph-bars').fadeIn().removeClass('hidden');
-      e.preventDefault();
-  });
-
-  function showTooltip(x, y, contents) {
-      $('<div id="tooltip">' + contents + '</div>').css({
-          top: y - 16,
-          left: x + 20
-      }).appendTo('body').fadeIn();
   }
-   
-  var previousPoint = null;
-   
-  $('#graph-lines, #graph-bars').bind('plothover', function (event, pos, item) {
-      if (item) {
-          if (previousPoint != item.dataIndex) {
-              previousPoint = item.dataIndex;
-              $('#tooltip').remove();
-              var x = item.datapoint[0],
-                  y = item.datapoint[1];
-                  showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
-          }
-      } else {
-          $('#tooltip').remove();
-          previousPoint = null;
-      }
-  });
+
+  function setGraphHoverOver(graphLineElem, graphBarElem, message){
+
+    var previousPoint = null;
+     
+    $(graphLineElem+', '+graphBarElem).bind('plothover', function (event, pos, item) {
+        if (item) {
+            if (previousPoint != item.dataIndex) {
+                previousPoint = item.dataIndex;
+                $('#tooltip').remove();
+                var x = item.datapoint[0],
+                    y = item.datapoint[1];
+                    // showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
+                    showTooltip(item.pageX, item.pageY, y);
+            }
+        } else {
+            $('#tooltip').remove();
+            previousPoint = null;
+        }
+    });
+
+  }
 
 </script>
