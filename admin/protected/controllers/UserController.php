@@ -68,6 +68,10 @@ class UserController extends Controller
 		{
 			$_POST['User']['date_added'] = date("Y-m-d H:i:s");
 
+			if(!isset($_POST['User']['university_id'])){
+				$_POST['User']['university_id'] = Yii::app()->user->getState('university_id');
+			}
+
 			if($_POST['User']['role'] == "administrator"){
 				$_POST['User']['university_id'] = 0;
 			}
@@ -77,7 +81,7 @@ class UserController extends Controller
 
 				$auth=Yii::app()->authManager;
 
-				if($auth->assign($model->role, $model->username)) {
+				if($auth->assign($model->role, $model->user_id)) {
 		            Yii::app()->authManager->save();
 				}
 

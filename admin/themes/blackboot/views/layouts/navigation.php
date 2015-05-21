@@ -2,7 +2,7 @@
 	'type'=>'inverse',
     // 'brand'=> (Yii::app()->user->isGuest || !Yii::app()->user->getState('is_top_admin'))? 'Administrator' :'<img style="height:44px; padding:0; margin:0;" src="'.Yii::app()->user->getState('school_logo').'" />',
     'brand'=>'Administrator',
-    'brandUrl'=>'index.php?r=collection/index',
+    'brandUrl'=>'index.php?r=site/index',
     'collapse'=>true,
     'items'=>array(
         array(

@@ -7,6 +7,9 @@
  */
 class UserIdentity extends CUserIdentity
 {
+
+	private $_id;
+
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -27,17 +30,20 @@ class UserIdentity extends CUserIdentity
 			$this->setState('id', $data->user_id);
 			$this->setState('name', $data->firstname." ".$data->lastname);
 			$this->setState('role', $data->role);
-			$this->setState('university_id', $data->university_id);
-
-			if($data->university){
-				$this->setState('is_top_admin', true);
+			
+			if(($data->university) && ($data->role != "administrator")){
+				$this->setState('university_id', $data->university_id);
+				$this->setState('is_top_admin', false);
 				$this->setState('school_logo', $data->university->logo);
 				$this->setState('school_name', $data->university->university_name);
 			}else{
-				$this->setState('is_top_admin', false);
+				$this->setState('university_id', 0);
+				$this->setState('is_top_admin', true);
 				$this->setState('school_logo', "");
 				$this->setState('school_name', "");
 			}
+
+			$this->_id = $data->user_id;
 
 			$this->errorCode=self::ERROR_NONE;
 		}else{
@@ -46,6 +52,11 @@ class UserIdentity extends CUserIdentity
 
 		return !$this->errorCode;
 
+	}
+
+	// the override for getID -- this is very important for the authentication system later.
+	public function getId() {
+		return $this->_id;
 	}
 
 }
