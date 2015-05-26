@@ -28,7 +28,7 @@
     // payment gateway
     // 1 = k-bank
     // 2 = t-bank
-    $paymeny_gateway = 2;
+    $paymeny_gateway = 2;    
 
 ?>
 <!-- CONTENT -->
@@ -209,7 +209,7 @@
 		                "MERCHANT2" => "451001605682521",
 		                "TERM2" => "70352168",
 		                "AMOUNT2" => $amount, // price of product, accept only 12 character
-		                "URL2" => "http://eportal.asia/index.php?page=paid_completed", // go back to page
+		                "URL2" => "http://pp/index.php?page=paid_successful", // go back to page
 		                "RESPURL" => "https://pp/", // this url is require SSL certification at least 128 bit
 		                "IPCUST2" => "128.199.64.178", // server ip address of merchant website
 		                "DETAIL2" => "Payment Test", // detail of product or service
@@ -251,14 +251,14 @@
 		
 		case 2: // t-bank
 			
-			$gateway = "https://uatkpgw.kasikornbank.com/pgpayment/payment.aspx"; // url gateway
+			$gateway = "https://ipay.thanachartbank.co.th/3dsecure/dccpayment/payment.aspx"; // url gateway
 
 			$data = array(
-		                "MERID" => "",
-		                "TERMINALID" => "",
-		                "PAYMENTFOR" => "",
-		                "INVOICENO" => "",
-		                "AMOUNT" => "",
+		                "MERID" => "21211800825",
+		                "TERMINALID" => "18000149",
+		                "PAYMENTFOR" => "https://ipay.thanachartbank.co.th/3dsecure/pgmerchant/default.aspx  ",
+		                "INVOICENO" => $code,
+		                "AMOUNT" => $amount,
 		                "POSTURL" => "",
 		                "POSTURL2" => "",
 		                "AUTOREDIRECT" => "",
@@ -267,9 +267,9 @@
 
 			?>
 
-				<!-- <form name="sendform" id="sendform" method="post" action="<?php echo $gateway; ?>"> 
+				<form name="sendform" id="sendform" method="post" action="<?php echo $gateway; ?>"> 
 
-				</form> -->
+				</form>
 
 			<?php
 

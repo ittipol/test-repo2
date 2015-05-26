@@ -54,11 +54,11 @@
 
 	    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/guest.jpg);background-size:cover;background-position:center center;" >
 		    <div id="signup-box" style="text-align:center;">
-		    	<div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">ชำระเงินได้ทันที</div>
-		    	<div style="font-size:30px; color:#FFF; padding:0 0 30px 0;">ชำระเงินได้ง่ายๆ และปลอดภัยกว่าในการชำระค่าใช้จ่ายของสถาบันการศึกษาชั้นนำหลายพันแห่ง</div>
+		    	<div style="font-size:50px; color:#FFF; padding:0 0 30px 0;"><?php echo $_language['section1_quote_first']; ?></div>
+		    	<div style="font-size:30px; color:#FFF; padding:0 0 30px 0;"><?php echo $_language['section1_quote_second']; ?></div>
 			    <!-- <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div> -->
 			    <div class="partners">
-		            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1">ลงทะเบียน</a>
+		            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1"><?php echo $_language['text_register']; ?></a>
 				</div>
 			</div>
 		</div>
@@ -67,9 +67,9 @@
 
 	 	<div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/logged_in.jpg);background-size:cover; background-position:top center;" >
 		    <div id="signup-box" style="text-align:center;">
-			    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">ยินดีต้อนรับคุณ <?php echo $_SESSION['fullname']?></div>
+			    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;"><?php echo sprintf($_language['text_welcome'],$_SESSION['fullname']); ?></div>
 			    <div class="partners">
-		            <a href="index.php?page=paid_list" class="btn btn-primary btn-large list-your-property custom-btn-1">ชำระค่าเทอมทันที</a>
+		            <a href="index.php?page=paid_list" class="btn btn-primary btn-large list-your-property custom-btn-1"><?php echo $_language['text_pay']; ?></a>
 				</div>
 			</div>
 		</div>
@@ -82,12 +82,12 @@
 				<div class="cell-header clearfix">
 					<img class="cell-img" src="assets/img/icon/icon-payment.png" />
 					<div class="cell-text">
-						<a href="javascript:void(0);" onclick="slideTo('payment-section');">Payportal</a>
+						<a href="javascript:void(0);" onclick="slideTo('payment-section');"><?php echo $_language['text_pay_portal']; ?></a>
 					</div>
 				</div>
 				<div class="cell-footer">
 					<div class="cell-message">
-						ชำระเงินง่ายๆ และปลอดภัยด้วยระบบการชำระงเินของเรา
+						<?php echo $_language['text_quote_payportal']; ?>
 					</div>
 				</div>
 			</div>
@@ -95,12 +95,12 @@
 				<div class="cell-header clearfix">
 					<img class="cell-img" src="assets/img/icon/icon-book.png" />
 					<div class="cell-text">
-						<a href="javascript:void(0);" onclick="slideTo('e-lib-section');">E-Library</a>
+						<a href="javascript:void(0);" onclick="slideTo('e-lib-section');"><?php echo $_language['text_e_library']; ?></a>
 					</div>
 				</div>
 				<div class="cell-footer">
 					<div class="cell-message">
-						มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา
+						<?php echo $_language['text_quote_e_library']; ?>
 					</div>
 				</div>
 			</div>
@@ -108,12 +108,12 @@
 				<div class="cell-header clearfix">
 					<img class="cell-img" src="assets/img/icon/notification.multiple.png" />
 					<div class="cell-text">
-						<a href="javascript:void(0);" onclick="slideTo('booking-section');">Booking Portal</a>
+						<a href="javascript:void(0);" onclick="slideTo('booking-section');"><?php echo $_language['text_booking_portal']; ?></a>
 					</div>
 				</div>
 				<div class="cell-footer">
 					<div class="cell-message">
-						คอร์สเรียนจากโรงเรียนชื่อดังที่มีให้เลือกมากมายและสามารถชำระเงินไดทันที
+						<?php echo $_language['text_quote_booking_portal']; ?>
 					</div>
 				</div>
 			</div>
@@ -143,12 +143,12 @@
 
  <div id="e-lib-section" class="section1" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/library.jpg);background-size:cover;background-position:center;" >
     <div class="boxText0">
- 		<h2 style="display:block;">ห้องสมุดอิเล็กทรอนิกส์</h2>
+ 		<h2 style="display:block;"><?php echo $_language['section2_quote_first']; ?></h2>
  		<div class="sub-text-box">
-	 		<div class="text1">ห้องสมุดของคุณ</div>
-	 		<div class="text2" style="color: #FFFFFF;">มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา</div>
+	 		<div class="text1"><?php echo $_language['section2_quote_second']; ?></div>
+	 		<div class="text2" style="color: #FFFFFF;"><?php echo $_language['section2_quote_third']; ?></div>
 		</div>
-		<a href="http://thaidemo.ebook.hyread.com.tw/" class="btn btn-primary list-your-property custom-btn-2">เพิ่มเติม</a>
+		<a href="http://thaidemo.ebook.hyread.com.tw/" class="btn btn-primary list-your-property custom-btn-2"><?php echo $_language['text_more']; ?></a>
  	</div>
  </div>
 
@@ -160,12 +160,12 @@
 
 <div id="booking-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/booking.jpg);background-size:cover;background-position:center;" >
 	<div class="boxText5" style="margin-left:47%;" >
- 		<h2>เข้าถึงการเรียนรู้ที่คุณต้องการ</h2>
+ 		<h2><?php echo $_language['section3_quote_first']; ?></h2>
  		<div class="sub-text-box">
-	 		<div class="text1">เลือกคอร์สเรียนสำหรับคุณ</div>
-	 		<div class="text2">คอร์สเรียนจากโรงเรียนชื่อดังที่มีให้เลือกมากมายและสามารถชำระเงินไดทันที</div>
+	 		<div class="text1"><?php echo $_language['section3_quote_second']; ?></div>
+	 		<div class="text2"><?php echo $_language['section3_quote_third']; ?></div>
 	 	</div>
-	 	<a href="index.php?page=booking" class="btn btn-primary list-your-property custom-btn-2" style="float:left;">เพิ่มเติม</a>
+	 	<a href="index.php?page=booking" class="btn btn-primary list-your-property custom-btn-2" style="float:left;"><?php echo $_language['text_more']; ?></a>
  	</div>
  </div>
 
@@ -178,15 +178,15 @@
 <div class="panel">
 	<div style="text-align:center;">
 		<div class="partners">
-			<div style="font-size:40px; color:#000; padding:0 0 30px 0;">ลงทะเบียน</div>
-		    <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1">ลงทะเบียน</a>
+			<div style="font-size:40px; color:#000; padding:0 0 30px 0;"><?php echo $_language['text_register']; ?></div>
+		    <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1"><?php echo $_language['text_register']; ?></a>
 		</div>
 	</div>
 </div>
 
  <div class="partners" style="background-color:#FFF;">
 
- 	<div style="font-size:40px; text-align:center; padding:40px 0;">สถาบันที่เข้าร่วมโครงการ</div>
+ 	<div style="font-size:40px; text-align:center; padding:40px 0;"><?php echo $_language['text_join_us']; ?></div>
 
 						<div class="content">
 					        
@@ -221,13 +221,9 @@
 
 			<div class="section3" style="width:100%; height:298px; background-color:rgb(245,245,245);" >
 			  	<div class="boxText3" style="color:#000;">
-			 		<h2 style="font-size:36px !important;">วิธีการชำระเงิน</h2>
+			 		<h2 style="font-size:36px !important;"><?php echo $_language['text_how_to_pay']; ?></h2>
 			 		<span style="font-size:22px;">
-			 			1.กรอกรหัสขำระเงิน<br/>
-			 			2.เลือกธนาคารที่ต้องการชำระเงิน<br/>
-			 			3.กดยืนยันการชำระเงิน<br/>
-			 			4.จากนั้นระบบจะทำการชำระเงิน<br/>
-			 			5.เมื่อระบบมำการชำระเงินเสร็จสิ้นจะส่งใบเสร็จรับเงินไปยังอีเมลของคุณ
+			 			<?php echo $_language['text_how_to_pay_detail']; ?>
 			 		</span>
 			 		
 			 	</div>

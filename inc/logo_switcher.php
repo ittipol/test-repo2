@@ -29,4 +29,33 @@
 
 	}
 
+	function titleSwitcher($route = ''){
+
+		switch ($route) {
+			case 'main':
+				return 'ePortal';
+				break;
+			
+			case 'paid_list':
+				return 'PayPortal';
+				break;
+
+			case 'invoiceinfo':
+				return 'PayPortal';
+				break;
+
+			case 'billing':
+				return 'PayPortal';
+				break;
+
+			case 'paid_completed':
+				return 'PayPortal';
+				break;
+
+			default:
+				return 'ePortal';
+		}
+
+	}
+
 ?>
