@@ -259,8 +259,8 @@
 		                "PAYMENTFOR" => "https://ipay.thanachartbank.co.th/3dsecure/pgmerchant/default.aspx  ",
 		                "INVOICENO" => $code,
 		                "AMOUNT" => $amount,
-		                "POSTURL" => "",
-		                "POSTURL2" => "",
+		                "POSTURL" => "http://pp/index.php?page=paid_successful",
+		                "POSTURL2" => "https://pp/",
 		                "AUTOREDIRECT" => "",
 
 		            );
@@ -268,7 +268,14 @@
 			?>
 
 				<form name="sendform" id="sendform" method="post" action="<?php echo $gateway; ?>"> 
-
+					<input Type="hidden" Name="MERID" value="<?php echo $data['MERID']; ?>">
+					<input Type="hidden" Name="TERMINALID" value="<?php echo $data['TERMINALID']; ?>">
+					<input Type="hidden" Name="INVOICENO" value="255308001"> 
+					<input Type="hidden" Name="AMOUNT" value="<?php echo $data['AMOUNT']; ?>"> 
+					<input Type="hidden" Name="POSTURL" value="<?php echo $data['POSTURL']; ?>">
+					<input Type="hidden" Name="POSTURL2" value="<?php echo $data['POSTURL2']; ?>">
+					<input Type="hidden" Name="AUTOREDIRECT" value="N">
+					<input type="hidden" name="PAYMENTFOR" value="MIC12372384">
 				</form>
 
 			<?php

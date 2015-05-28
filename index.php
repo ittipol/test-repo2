@@ -4,6 +4,13 @@
 
 //-----------------------------------------------------------------------------
 
+// HTTP POST
+if(isset($_POST['language'])){
+    // thai
+    // english
+    $_COOKIE['language'] = $_POST['language'];
+}
+
 if(isset($_GET['action']) && ($_GET['action'] == 'logout'))
 {
 	$_SESSION['currentPage'] = 'main';
