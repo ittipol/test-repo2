@@ -4,11 +4,15 @@
 
 //-----------------------------------------------------------------------------
 
-// HTTP POST
-if(isset($_POST['language'])){
-    // thai
-    // english
-    $_COOKIE['language'] = $_POST['language'];
+if(isset($_POST['language_code'])){
+
+    setcookie("language", $_POST['language_code'], time()+31536000); // expire time is a year
+
+    if(isset($_POST['redirect'])){
+        redirect($_POST['redirect']);
+    }else{
+        redirect("index.php?page=main");
+    }
 }
 
 if(isset($_GET['action']) && ($_GET['action'] == 'logout'))
@@ -30,13 +34,15 @@ if(isset($_GET['action']) && ($_GET['action'] == 'logout'))
     <meta name="author" content="Aviators - byaviators.com">
 
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="assets/css/custom.css" type="text/css">
+    
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
     <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="assets/css/bootstrap-responsive.css" type="text/css">
     <!-- <link rel="stylesheet" href="assets/libraries/chosen/chosen.css" type="text/css"> -->
     <link rel="stylesheet" href="assets/libraries/bootstrap-fileupload/bootstrap-fileupload.css" type="text/css">
     <link rel="stylesheet" href="assets/libraries/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/realia-blue.css" type="text/css" id="color-variant-default">
+    <link rel="stylesheet" href="assets/css/custom.css" type="text/css">
     <!-- <link rel="stylesheet" href="#" type="text/css" id="color-variant"> -->
 
     <title><?php echo titleSwitcher($_GET['page']); ?></title>
@@ -49,6 +55,7 @@ if(isset($_GET['action']) && ($_GET['action'] == 'logout'))
             <!-- HEADER -->
             <div id="header-wrapper">
                 <div id="header">
+
                     <div id="header-inner" style="background-color:#009cde;">
                         <div class="container">
                             <div class="navbar">
@@ -110,6 +117,30 @@ if(isset($_GET['action']) && ($_GET['action'] == 'logout'))
                             </div><!-- /.navbar -->
                         </div><!-- /.container -->
                     </div><!-- /#header-inner -->
+
+                    <div class="sub-header">
+                        <div class="container">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <ul class="language-group">
+                                        <li>
+                                            <a href="javascript:void(0);" onclick="changeLanguage('thai');">Thai</a>
+                                        </li>
+                                        <li>|</li>
+                                        <li>
+                                            <a href="javascript:void(0);" onclick="changeLanguage('english');">English</a>
+                                    </ul>
+
+                                    <form method="POST" action="index.php" id="frm_change_language">
+                                        <input type="hidden" id="language_code" name="language_code" value="">
+                                        <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div><!-- /#header -->
             </div><!-- /#header-wrapper -->
             
@@ -154,18 +185,6 @@ else if(file_exists("pages/".$_GET['page'].".php") && $_GET['page'])
                 </div>
             </div>
 
-            <!-- <div style="width:40%; margin:0 auto;">
-                <div class=" footer-nav">
-                    <a href="#">ความช่วยเหลือ</a>
-                    <a href="#">ข้อมูลความปลอดภัย</a>
-                    <a href="#">เกียวกับเรา</a>
-                    <a href="#">ติดต่อเรา</a>
-                </div>
-                <div class=" copyright">
-                    © Copyright 2014 by Payportal. All rights reserved.
-                </div>
-            </div> -->
-           
         </div>
     </div>
 </div><!-- /#footer-wrapper -->
@@ -186,6 +205,11 @@ else if(file_exists("pages/".$_GET['page'].".php") && $_GET['page'])
 <script type="text/javascript" src="assets/js/realia.js"></script>
 
 <script type="text/javascript">
+
+    function changeLanguage(language){
+        $("#language_code").attr("value", language);
+        $("#frm_change_language").submit();
+    }
 
 	// var w,w2;
 	// var wh = 0, wh2 = 0;

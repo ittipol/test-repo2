@@ -25,10 +25,41 @@
     // invoice code for test
     $code = strval($row2['code']);
 
+    // ============================================
+
+    $allow_payment = 1;
+
     // payment gateway
     // 1 = k-bank
     // 2 = t-bank
-    $paymeny_gateway = 2;    
+    $paymeny_gateway = 2;   
+
+    // delete temp invoice with invoice_temp_id
+    // $cmd = "DELETE FROM invoice_temp_payment WHERE invoice_temp_id = '".$code."'";
+    // $database->query($cmd);
+
+    $cmd = "SELECT * FROM invoice_temp_payment WHERE referance_code = '".$code."'";
+    $result = $database->query($cmd);
+
+    $nums=mysql_num_rows($result);
+    $row = mysql_fetch_array($result);
+  
+    if($nums == 0){ // create new one
+
+    	// create temp invoice
+	    $cmd = "INSERT INTO invoice_temp_payment 
+	    		(invoice_temp_id, referance_code, date_added, bank_id, payment_processing) 
+	    		VALUES 
+	    		(NULL, '".$code."', NOW(), '".$paymeny_gateway."', 0)";
+	    $database->query($cmd);
+
+    }else{
+
+    	if($row['payment_processing'] == 1){ // this transaction is processing at this moment
+    		$allow_payment = 0;
+    	}
+
+    }
 
 ?>
 <!-- CONTENT -->
@@ -145,14 +176,21 @@
    			                </div><!-- /.row -->		                 
 			            </div><!-- /.content -->
 
-
-                                 <div class="row" style="margin-top:25px;">
-				                	<div class="span12" align="center">
-					                		<!-- <a class="btn btn-primary btn-large list-your-property " href="index.php?page=paid&nID=<?php echo $row['invoice_id']?>">ยืนยันการชำระเงิน</a> -->
-					                		<!-- <a class="btn btn-primary btn-large list-your-property " href="gateway.php?nID=<?php echo $row['invoice_id']?>">ยืนยันการชำระเงิน</a> -->
-					                		<a class="btn btn-primary btn-large list-your-property " href="javascript:void(0);" onclick="sendData();">ยืนยันการชำระเงิน</a>
-				                	</div>
-				             </div>
+			            	<?php if($allow_payment){ ?>
+                            <div class="row" style="margin-top:25px;">
+				                <div class="span12" align="center">
+					                <!-- <a class="btn btn-primary btn-large list-your-property " href="index.php?page=paid&nID=<?php echo $row['invoice_id']?>">ยืนยันการชำระเงิน</a> -->
+					                <!-- <a class="btn btn-primary btn-large list-your-property " href="gateway.php?nID=<?php echo $row['invoice_id']?>">ยืนยันการชำระเงิน</a> -->
+					                <a class="btn btn-primary btn-large list-your-property " href="javascript:void(0);" onclick="sendData('<?php echo $code; ?>');">ยืนยันการชำระเงิน</a>
+				                </div>
+				            </div>
+				            <?php }else{ ?>
+				            <div class="row" style="margin-top:25px;">
+				                <div class="span12" align="center">
+				                	<h2 style="color:red; font-weight:bold;">This transaction is processing at this moment. Please wait.</h2>
+				                </div>
+				            </div>
+				            <?php } ?>
 				        <?php
                             }
                             else
@@ -257,7 +295,7 @@
 		                "MERID" => "21211800825",
 		                "TERMINALID" => "18000149",
 		                "PAYMENTFOR" => "https://ipay.thanachartbank.co.th/3dsecure/pgmerchant/default.aspx  ",
-		                "INVOICENO" => $code,
+		                "INVOICENO" => substr($code,2,10),
 		                "AMOUNT" => $amount,
 		                "POSTURL" => "http://pp/index.php?page=paid_successful",
 		                "POSTURL2" => "https://pp/",
@@ -270,7 +308,7 @@
 				<form name="sendform" id="sendform" method="post" action="<?php echo $gateway; ?>"> 
 					<input Type="hidden" Name="MERID" value="<?php echo $data['MERID']; ?>">
 					<input Type="hidden" Name="TERMINALID" value="<?php echo $data['TERMINALID']; ?>">
-					<input Type="hidden" Name="INVOICENO" value="255308001"> 
+					<input Type="hidden" Name="INVOICENO" value="<?php echo $data['INVOICENO']; ?>"> 
 					<input Type="hidden" Name="AMOUNT" value="<?php echo $data['AMOUNT']; ?>"> 
 					<input Type="hidden" Name="POSTURL" value="<?php echo $data['POSTURL']; ?>">
 					<input Type="hidden" Name="POSTURL2" value="<?php echo $data['POSTURL2']; ?>">
@@ -288,7 +326,24 @@
 ?>
 
 <script type="text/javascript">
-	function sendData(){
-		document.getElementById("sendform").submit();
+	function sendData(code){
+
+		$.ajax({
+	        url: "async/transaction_processing.php",
+	        type: "post",
+	        data: {code:code},
+	        dataType: "json",
+	        success: function(){
+	            // alert("success");
+	            // $("#result").html('Submitted successfully');
+	            document.getElementById("sendform").submit();
+	        },
+	        error:function(){
+	            alert("failure");
+	            // $("#result").html('There is error while submit');
+	        }
+	    });
+
+		
 	}
 </script>

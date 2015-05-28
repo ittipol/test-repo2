@@ -219,17 +219,13 @@
 
 					<div>
 
-			<div class="section3" style="width:100%; height:298px; background-color:rgb(245,245,245);" >
+			<div class="section3" style="width:100%; background-color:rgb(245,245,245);" >
 			  	<div class="boxText3" style="color:#000;">
 			 		<h2 style="font-size:36px !important;"><?php echo $_language['text_how_to_pay']; ?></h2>
 			 		<span style="font-size:22px;">
 			 			<?php echo $_language['text_how_to_pay_detail']; ?>
 			 		</span>
 			 		
-			 	</div>
-			 	<div class="boxText4" style="color:#000;">
-			 		<h2 style="font-size:36px !important;"></h2>
-			 		<span style="font-size:22px;"></span>
 			 	</div>
 
  			</div>
@@ -244,7 +240,7 @@
 
 	// First Banner handle displaying full screen on any resolution
 	var h = window.innerHeight;
-	var btmh = 90 + 180; // header bar + below first banner
+	var btmh = 90 + 180 + 40; // header bar + below first banner
 	var v = h-btmh;
 	var e = document.getElementById("signup-section");
 	e.style.height = v+"px";

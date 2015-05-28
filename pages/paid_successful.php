@@ -19,12 +19,16 @@
 	// 756 CHF
 	// FILLSPACE : card type
 // $_POST['HOSTRESP']= "00";
-
+var_dump($_POST);exit;
 	switch($_POST['HOSTRESP']){
 		case "00": // Approved
 
 			require_once('inc/mail.php');
 			sendEmail($database);
+
+			// delete temp invoice with invoice_temp_id
+		    $cmd = "DELETE FROM invoice_temp_payment WHERE invoice_temp_id = '".$_POST['RETURNINV']."'";
+		    $database->query($cmd);
 
 			$message = "การชำระเงินเสร็จสิ้น<br/><br/>ใบเสร็จรับเงินจะถูกส่งไปยังอีเมลที่คุณได้ระบุไว้";
 			$message_btn = "ดำเนินการต่อ";

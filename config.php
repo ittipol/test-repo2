@@ -13,6 +13,10 @@
 	    $language = $_COOKIE['language'];
 	}
 
+	if(!is_dir('language/'.$language)){
+		$language = 'english';
+	}
+
 	include('language/'.$language.'/index.php');
 	if(file_exists('language/'.$language.'/'.$_GET['page'].'.php')){
 	    include('language/'.$language.'/'.$_GET['page'].'.php');

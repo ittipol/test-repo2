@@ -500,6 +500,7 @@ ul.header-nav-list li{
   	line-height: 90px;
   	color: #FFF;
   	font-size: 22px;
+  	list-style-type: disc;
 }
 
 ul.header-nav-list li a{
@@ -565,11 +566,11 @@ ul.header-nav-list li a{
 }
 
 .boxText3{
-	 display: block; margin-top:3%;  margin-left: 15%; position: absolute; color: #FFF; width:38%;
+	 display: block; /*margin-top:3%;*/  margin-left: 15%; /*position: absolute;*/ color: #FFF; width:38%; margin-bottom: 30px;
  }
  
  .boxText4{
-	 display: block; margin-top:3%;  margin-left: 55%; position: absolute; color: #FFF; width:38%;
+	 display: block; /*margin-top:3%;*/  margin-left: 55%; /*position: absolute;*/ color: #FFF; width:38%;
  }
 
  @media (min-width: 768px) and (max-width: 979px) {
@@ -794,4 +795,17 @@ table.table tbody td{
 
 .panel{
 	padding: 90px 0;	
+}
+
+.language-group{
+	padding: 0;
+	margin: 0;
+}
+
+.language-group li{
+	float: right;
+	margin-right: 10px;
+	font-size: 18px;
+  	font-weight: bold;
+  	line-height: 40px;
 }
