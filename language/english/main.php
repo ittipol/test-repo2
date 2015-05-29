@@ -20,7 +20,7 @@
  	$_language['section2_quote_second'] = "Your library.";
  	$_language['section2_quote_third'] = "There are many book for reading, and the book can read everytime, everywhere.";
 
- 	$_language['section3_quote_first'] = "Find out a class for you0.";
+ 	$_language['section3_quote_first'] = "Find out a class for you.";
  	$_language['section3_quote_second'] = "What course do you want to learn.";
  	$_language['section3_quote_third'] = "There are many study course from the best famous academy.";
 
