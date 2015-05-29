@@ -53,9 +53,9 @@
     <?php if($_SESSION['isLogin'] == ""){ ?>
 
 	    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/guest.jpg);background-size:cover;background-position:center center;" >
-		    <div id="signup-box" style="text-align:center;">
-		    	<div style="font-size:50px; color:#FFF; padding:0 0 30px 0;"><?php echo $_language['section1_quote_first']; ?></div>
-		    	<div style="font-size:30px; color:#FFF; padding:0 0 30px 0;"><?php echo $_language['section1_quote_second']; ?></div>
+		    <div id="signup-box" class="disktop-box" style="text-align:center;">
+		    	<div class="first-quote"><?php echo $_language['section1_quote_first']; ?></div>
+		    	<div class="second-quote"><?php echo $_language['section1_quote_second']; ?></div>
 			    <!-- <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div> -->
 			    <div class="partners">
 		            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1"><?php echo $_language['text_register']; ?></a>
@@ -66,17 +66,17 @@
  	<?php }else{ // logged in ?>
 
 	 	<div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/logged_in.jpg);background-size:cover; background-position:top center;" >
-		    <div id="signup-box" style="text-align:center;">
-			    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;"><?php echo sprintf($_language['text_welcome'],$_SESSION['fullname']); ?></div>
+		    <div id="signup-box" class="disktop-box" style="text-align:center;">
+			    <div class="display-name"><?php echo sprintf($_language['text_welcome'],$_SESSION['fullname']); ?></div>
 			    <div class="partners">
-		            <a href="index.php?page=paid_list" class="btn btn-primary btn-large list-your-property custom-btn-1"><?php echo $_language['text_pay']; ?></a>
+		            <a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-1"><?php echo $_language['text_pay']; ?></a>
 				</div>
 			</div>
 		</div>
 		
  	<?php } ?>
 
- 	<div class="landing-page-nav">
+ 	<div class="landing-page-nav show-desktop">
 		<div class="row-fluid">
 			<div class="span4 cell">
 				<div class="cell-header clearfix">
@@ -123,6 +123,27 @@
     </div><!-- /.map -->
 </div><!-- /.map-wrapper -->
 
+<div class="hidden-desktop span12" style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote" style="color:#06a7ea;"><img class="cell-img" src="assets/img/icon/icon-payment.png" /><?php echo $_language['text_pay_portal']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['text_quote_payportal']; ?></div>
+ 	</div>
+ </div>
+
+ <div class="hidden-desktop span12"style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote" style="color:#06a7ea;"><img class="cell-img" src="assets/img/icon/icon-book.png" /><?php echo $_language['text_e_library']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['text_quote_e_library']; ?></div>
+ 	</div>
+ </div>
+
+ <div class="hidden-desktop span12" style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote" style="color:#06a7ea;"><img class="cell-img" src="assets/img/icon/notification.multiple.png" /><?php echo $_language['text_booking_portal']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['text_quote_booking_portal']; ?></div>
+ 	</div>
+ </div>
+
 <!-- Payportal Main Service -->
 <!-- <div id="payment-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/payment.jpg);background-size:cover;background-position:center;" >
 	<div class="boxText5" style="margin-left:47%;" >
@@ -141,8 +162,8 @@
 	</div>
 </div>
 
- <div id="e-lib-section" class="section1" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/library.jpg);background-size:cover;background-position:center;" >
-    <div class="boxText0">
+ <div id="e-lib-section" class="banner-container section1" style="background-image:url(assets/img/landing_page/library.jpg);background-size:cover;background-position:center;" >
+    <div class="boxText0 show-desktop">
  		<h2 style="display:block;"><?php echo $_language['section2_quote_first']; ?></h2>
  		<div class="sub-text-box">
 	 		<div class="text1"><?php echo $_language['section2_quote_second']; ?></div>
@@ -152,20 +173,38 @@
  	</div>
  </div>
 
+ <div class="hidden-desktop span12" style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote"><?php echo $_language['section2_quote_first']; ?></div>
+	 	<div class="second-quote"><?php echo $_language['section2_quote_second']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['section2_quote_third']; ?></div>
+	 	<a href="http://thaidemo.ebook.hyread.com.tw/" class="btn btn-primary list-your-property custom-btn-2" style="margin-top:20px;"><?php echo $_language['text_more']; ?></a>
+ 	</div>
+ </div>
+
 <div class="row" style="height:10px; background-color:#06a7ea;">
 	<div style="text-align: center;">
 		<!-- <a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a> -->
 	</div>
 </div>
 
-<div id="booking-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/booking.jpg);background-size:cover;background-position:center;" >
-	<div class="boxText5" style="margin-left:47%;" >
+<div id="booking-section" class="banner-container section4" style="background-image:url(assets/img/landing_page/booking.jpg);background-size:cover;background-position:center;" >
+	<div class="boxText5 show-desktop" style="margin-left:47%;" >
  		<h2><?php echo $_language['section3_quote_first']; ?></h2>
  		<div class="sub-text-box">
 	 		<div class="text1"><?php echo $_language['section3_quote_second']; ?></div>
 	 		<div class="text2"><?php echo $_language['section3_quote_third']; ?></div>
 	 	</div>
 	 	<a href="index.php?page=booking" class="btn btn-primary list-your-property custom-btn-2" style="float:left;"><?php echo $_language['text_more']; ?></a>
+ 	</div>
+ </div>
+
+ <div class="hidden-desktop span12" style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote"><?php echo $_language['section3_quote_first']; ?></div>
+	 	<div class="second-quote"><?php echo $_language['section3_quote_second']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['section3_quote_third']; ?></div>
+	 	<a href="index.php?page=booking" class="btn btn-primary list-your-property custom-btn-2" style="margin-top:20px;"><?php echo $_language['text_more']; ?></a>
  	</div>
  </div>
 
@@ -247,56 +286,58 @@
 	var e2 = document.getElementById("signup-box");
 	e2.style.paddingTop = ((v-e2.clientHeight)/2) + "px";
 
-	function gradeChange(e){
+	
 
-		// var newSelect=document.createElement('select');
-		var newSelect=document.getElementById('select-box-class-value');
-		newSelect.innerHTML = "";
-		// var index=0;
-		var opt = document.createElement("option");
+	// function gradeChange(e){
 
-		opt.value= 0;
-		opt.innerHTML = "ปีที่"; // whatever property it has
-		newSelect.appendChild(opt);
+	// 	// var newSelect=document.createElement('select');
+	// 	var newSelect=document.getElementById('select-box-class-value');
+	// 	newSelect.innerHTML = "";
+		
+	// 	var opt = document.createElement("option");
 
-		var grade = e.options[e.selectedIndex].value;
+	// 	opt.value= 0;
+	// 	opt.innerHTML = "ปีที่"; // whatever property it has
+	// 	newSelect.appendChild(opt);
 
-		switch(grade){
+	// 	var grade = e.options[e.selectedIndex].value;
 
-			case '0':
+	// 	switch(grade){
 
-			break;
+	// 		case '0':
+
+	// 		break;
 			
-			case 'k':
-				for (i = 1; i <= 3; i++) 
-				{
-				   var opt = document.createElement("option");
-				   opt.value= i;
-				   opt.innerHTML = i; // whatever property it has
+	// 		case 'k':
+	// 			for (i = 1; i <= 3; i++) 
+	// 			{
+	// 			   var opt = document.createElement("option");
+	// 			   opt.value= i;
+	// 			   opt.innerHTML = i; // whatever property it has
 
-				   // then append it to the select element
-				   newSelect.appendChild(opt);
-				   // index++;
-				}
-			break;
+	// 			   // then append it to the select element
+	// 			   newSelect.appendChild(opt);
+	// 			   // index++;
+	// 			}
+	// 		break;
 
-			default: // p,s
-				for (i = 1; i <= 6; i++) 
-				{
-				   var opt = document.createElement("option");
-				   opt.value= i;
-				   opt.innerHTML = i; // whatever property it has
+	// 		default: // p,s
+	// 			for (i = 1; i <= 6; i++) 
+	// 			{
+	// 			   var opt = document.createElement("option");
+	// 			   opt.value= i;
+	// 			   opt.innerHTML = i; // whatever property it has
 
-				   // then append it to the select element
-				   newSelect.appendChild(opt);
-				   // index++;
-				}
+	// 			   // then append it to the select element
+	// 			   newSelect.appendChild(opt);
+	// 			   // index++;
+	// 			}
 
-		}
+	// 	}
 
-		// $("#select-box-class-value").html("").append(newSelect);
+	// 	// $("#select-box-class-value").html("").append(newSelect);
 				
-	}
+	// }
 
 	function slideTo(id){
 		var t = $("#"+id).offset().top;

@@ -29,9 +29,8 @@
 
     $allow_payment = 1;
 
-    // payment gateway
-    // 1 = k-bank
-    // 2 = t-bank
+    // ahoose a payment gateway
+    // see in bank table on payportal_db
     $paymeny_gateway = 2;   
 
     // delete temp invoice with invoice_temp_id

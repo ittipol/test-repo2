@@ -3,6 +3,7 @@
 	$_language['text_logout'] = "ออกจากระบบ";
 	$_language['text_payment_history'] = "ประวัติการชำระเงิน";
 	$_language['text_register'] = "สมัครสมาชิก";
+	$_language['text_interested_people'] = "ผู้สนใจทั่วไป";
 	$_language['text_how_to_pay'] = "วิธีการชำระเงิน";
 	$_language['text_student'] = "นักเรียน";
 	$_language['text_educational_institution'] = "สถาบันการศึกษา";

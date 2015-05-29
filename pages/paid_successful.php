@@ -20,6 +20,11 @@
 	// FILLSPACE : card type
 // $_POST['HOSTRESP']= "00";
 var_dump($_POST);exit;
+
+	if(isset(var)){
+
+	}
+
 	switch($_POST['HOSTRESP']){
 		case "00": // Approved
 
@@ -77,6 +82,7 @@ var_dump($_POST);exit;
 
 		if(!$row['mail_sended']){
 
+			// get invoice template
 			$tpl_invoice = file_get_contents('template/invoice.tpl');
 
 			$to = array('ittipol@khroton.com','ittipol_master@hotmail.com');

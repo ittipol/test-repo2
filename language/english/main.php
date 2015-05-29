@@ -6,7 +6,7 @@
 	$_language['text_booking_portal'] = "Booking Portal";
 	$_language['text_register'] = "Register";
 	$_language['text_welcome'] = "Welcome %s";
-	$_language['text_join_us'] = "The academy joined us";
+	$_language['text_join_us'] = "The academies are joined us";
 	$_language['text_more'] = "more";
 
  	$_language['text_quote_payportal'] = "Pay easily and safety with our system.";
@@ -20,7 +20,7 @@
  	$_language['section2_quote_second'] = "Your library.";
  	$_language['section2_quote_third'] = "There are many book for reading, and the book can read everytime, everywhere.";
 
- 	$_language['section3_quote_first'] = "Find out.";
+ 	$_language['section3_quote_first'] = "Find out a class for you0.";
  	$_language['section3_quote_second'] = "What course do you want to learn.";
  	$_language['section3_quote_third'] = "There are many study course from the best famous academy.";
 

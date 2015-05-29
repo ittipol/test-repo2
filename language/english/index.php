@@ -3,6 +3,7 @@
 	$_language['text_logout'] = "Logout";
 	$_language['text_payment_history'] = "Payment history";
 	$_language['text_register'] = "Register";
+	$_language['text_interested_people'] = "Interested person";
 	$_language['text_how_to_pay'] = "How to pay";
 	$_language['text_student'] = "Student";
 	$_language['text_educational_institution'] = "Academy ";

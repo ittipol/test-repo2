@@ -90,6 +90,69 @@ body{
 	line-height: 30px;
 }
 
+@media (min-width: 980px){
+
+	.first-quote{
+		font-size:50px; 
+		color:#FFF; 
+		padding:0 0 30px 0;
+	}
+
+	.disktop-box .second-quote{
+		font-size:30px; 
+		color:#FFF; 
+		padding:0 0 10px 0;
+		line-height: 40px;
+	}
+
+	.hidden-desktop{
+		display: none;
+	}
+
+	.cell-footer .cell-message{
+		font-size: 24px;
+		line-height: 24px;
+	}
+
+	.display-name{
+		font-size:50px; 
+		color:#FFF; 
+		padding:0 0 30px 0;
+	}
+
+	.custom-btn-1{
+		width: 400px;
+		font-family: ThaiSansNeue_regular !important;
+		font-size: 25px !important;
+		font-weight: bold !important;
+	}
+
+	.custom-btn-2{
+		margin-top: 4px;
+		font-family: ThaiSansNeue_regular !important;
+		font-size: 25px !important;
+		font-weight: bold !important;
+	}
+
+	.banner-container{
+		width:100%;
+		padding-bottom: 32%;
+	}
+
+	.hidden-box .second-quote{
+		font-size: 20px;
+		font-weight: bold;
+  		line-height: 40px;
+  		color: #06a7ea;
+	}
+
+	.hidden-box .third-quote{
+		font-size: 20px;
+  		line-height: 20px;
+	}
+
+}
+
 @media (min-width: 768px) and (max-width: 979px) {
 
 	.boxText0{
@@ -118,6 +181,70 @@ body{
 		display: block;
 		font-size: 16px;
 		line-height: 20px;
+	}
+
+	.first-quote{
+		font-size:40px; 
+		color:#FFF; 
+		padding:0 0 10px 0;
+		line-height: 40px;
+	}
+
+	.disktop-box .second-quote{
+		font-size:50px; 
+		color:#FFF; 
+		padding:0 0 30px 0;
+	}
+
+	.show-desktop{
+		display: none;
+	}
+
+	.hidden-desktop{
+		display: block;
+	}
+
+	.cell-footer .cell-message{
+		font-size: 24px;
+		line-height: 24px;
+		width: 80%;
+	}
+
+	.display-name{
+		font-size:40px; 
+		color:#FFF; 
+		padding:0 0 30px 0;
+	}
+
+	.partners .content .partner {
+		margin-bottom: 40px;
+	}
+
+	.banner-container{
+		width:100%;
+		padding-bottom: 50%;
+	}
+
+	.hidden-box{
+		padding: 20px;
+	}
+
+	.hidden-box .primary-quote{
+		font-size: 40px;
+  		font-weight: bold;
+  		line-height: 40px;
+	}
+
+	.hidden-box .second-quote{
+		font-size: 20px;
+		font-weight: bold;
+  		line-height: 40px;
+  		color: #06a7ea;
+	}
+
+	.hidden-box .third-quote{
+		font-size: 20px;
+  		line-height: 20px;
 	}
 
 }
@@ -158,6 +285,70 @@ body{
 		display: block;
 		font-size: 12px;
 		line-height: 15px;
+	}
+
+	.first-quote{
+		font-size:50px; 
+		color:#FFF; 
+		padding:0 0 10px 0;
+		line-height: 40px;
+	}
+
+	.disktop-box .second-quote{
+		font-size:20px; 
+		color:#FFF; 
+		padding:0 0 30px 0;
+	}
+
+	.show-desktop{
+		display: none;
+	}
+
+	.hidden-desktop{
+		display: block;
+	}
+
+	.cell-footer .cell-message{
+		font-size: 24px;
+		line-height: 24px;
+		width: 75%;
+	}
+
+	.display-name{
+		font-size:30px; 
+		color:#FFF; 
+		padding:0 0 30px 0;
+	}
+
+	.partners .content .partner {
+		margin-bottom: 40px;
+	}
+
+	.banner-container{
+		width:100%;
+		padding-bottom: 55%;
+	}
+
+	.hidden-box{
+		padding: 20px;
+	}
+
+	.hidden-box .primary-quote{
+		font-size: 40px;
+  		font-weight: bold;
+  		line-height: 40px;
+	}
+
+	.hidden-box .second-quote{
+		font-size: 20px;
+		font-weight: bold;
+  		line-height: 40px;
+  		color: #06a7ea;
+	}
+
+	.hidden-box .third-quote{
+		font-size: 20px;
+  		line-height: 20px;
 	}
 
 }
@@ -201,12 +392,76 @@ body{
 	}
 
 	.section3{
-	  height: 160px;
+	  /*height: 160px;*/
+	}
+
+	.first-quote{
+		font-size:50px; 
+		color:#FFF; 
+		padding:0 0 10px 0;
+		line-height: 40px;
+	}
+
+	.disktop-box .second-quote{
+		font-size:18px; 
+		color:#FFF; 
+		padding:0 0 30px 0;
+	}
+
+	.show-desktop{
+		display: none;
+	}
+
+	.hidden-desktop{
+		display: block;
+	}
+
+	.cell-footer .cell-message{
+		font-size: 24px;
+		line-height: 24px;
+		width: 70%;
+	}
+
+	.display-name{
+		font-size:20px; 
+		color:#FFF; 
+		padding:0 0 30px 0;
+	}
+
+	.partners .content .partner {
+		margin-bottom: 40px;
+	}
+
+	.banner-container{
+		width:100%;
+		padding-bottom: 60%;
+	}
+
+	.hidden-box{
+		padding: 20px;
+	}
+
+	.hidden-box .primary-quote{
+		font-size: 40px;
+  		font-weight: bold;
+  		line-height: 40px;
+	}
+
+	.hidden-box .second-quote{
+		font-size: 20px;
+		font-weight: bold;
+  		line-height: 40px;
+  		color: #06a7ea;
+	}
+
+	.hidden-box .third-quote{
+		font-size: 20px;
+  		line-height: 20px;
 	}
 
 }
 
-@media (max-width: 1000px) { 
+/*@media (max-width: 1000px) { 
 	#searchbar{
 		overflow: visible;
 	}
@@ -234,7 +489,7 @@ body{
 	#searchbar2{
 		display: block;
 	}
-}
+}*/
 
 .logo-text{
 	position: absolute;
@@ -519,20 +774,6 @@ ul.header-nav-list li a{
 	background-color: rgba(0,0,0,.3);
 }
 
-.custom-btn-1{
-	width: 400px;
-	font-family: ThaiSansNeue_regular !important;
-	font-size: 25px !important;
-	font-weight: bold !important;
-}
-
-.custom-btn-2{
-	margin-top: 4px;
-	font-family: ThaiSansNeue_regular !important;
-	font-size: 25px !important;
-	font-weight: bold !important;
-}
-
 .boxText5 h2, .boxText5 div{
 	text-align: right;
 }
@@ -674,7 +915,7 @@ ul.header-nav-list li a{
 	}
 
 .landing-page-nav{
-	height:180px; 
+	/*height:180px; */
 	background-color:#FFF;
 	text-align: center;
 }
@@ -760,6 +1001,7 @@ ul.header-nav-list li a{
 	float: left;
   	height: 60px;
   	font-size: 30px;
+  	font-weight: bold;
   	line-height: 50px;
   	padding-left: 20px;
 }
@@ -768,12 +1010,6 @@ ul.header-nav-list li a{
 	/*color: #707070;*/
 	color: #06a7ea;
 	text-decoration: none;
-	font-weight: bold;
-}
-
-.cell-footer .cell-message{
-	font-size: 24px;
-	line-height: 24px;
 }
 
 table.table thead th{
@@ -808,4 +1044,28 @@ table.table tbody td{
 	font-size: 18px;
   	font-weight: bold;
   	line-height: 40px;
+}
+
+.off-screen-menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 238px;
+}
+
+.nav-item{
+	width: 100%;
+}
+
+.nav-item a{
+	padding: 0.5em 1em;
+	font-size: 22px;
+	font-weight: bold;
+	display: block;
+	text-decoration: none;
+}
+
+.hidden-desktop .logo{
+	float: right !important;
+	margin-right: -5% !important;
 }
