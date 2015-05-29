@@ -23,12 +23,15 @@ $cs->registerCssFile($baseUrl.'/css/bootstrap.css');
 $cs->registerCssFile($baseUrl.'/css/bootstrap-responsive.css');
 $cs->registerCssFile($baseUrl.'/css/style.css');
 $cs->registerCssFile($baseUrl.'/js/jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.min.css');
+$cs->registerCssFile($baseUrl.'/css/flot.css');
 
 $cs->registerScriptFile($baseUrl.'/js/jquery-ui/js/jquery-ui-1.10.4.custom.min.js');
 $cs->registerScriptFile($baseUrl.'/js/tabs.js');
 $cs->registerScriptFile($baseUrl.'/js/lib/google-chart.js');
+$cs->registerScriptFile($baseUrl.'/js/jquery.flot.js');
 
 ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -43,15 +46,15 @@ $cs->registerScriptFile($baseUrl.'/js/lib/google-chart.js');
 
 <script src="<?php echo $baseUrl; ?>/js/ckeditor/ckeditor.js"></script>
 
-<?php if(!Yii::app()->user->isGuest){ ?>
+<?php if(!Yii::app()->user->isGuest && Yii::app()->user->getState('is_top_admin')){ ?>
 
 <style type="text/css">
 
-.brand{
+/*.brand{
     padding: 0 !important;
     margin-right: 10px;
 }
-
+*/
 </style>
 
 <?php } ?>
@@ -64,6 +67,7 @@ $cs->registerScriptFile($baseUrl.'/js/lib/google-chart.js');
 <h4>DEBUG LOG</h4>
 <pre></pre></p>
 -->
+
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">

@@ -62,7 +62,7 @@
 	<?php if($university_id == 0) {?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'university_id'); ?>
-		<?php echo $form->dropDownList($model,'university_id',$schools); ?>
+		<?php echo $form->dropDownList($model,'university_id',$edu_inst); ?>
 		<?php echo $form->error($model,'university_id'); ?>
 	</div>
 	<?php } ?>

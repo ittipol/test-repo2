@@ -43,15 +43,6 @@
 			
 	}
 
-	$service_url = "http://www.zhake.com/web/index.php?route=api/apipp/getBestSeller";
-
-	$api = new ApiCaller();
-	//$api->setServiceUrl($service_url);
-	//$response = $api->post($post_data);
-	//$response = json_decode($response,true);
-
-	$response = array();
-
 ?>
 
  <!-- CONTENT -->
@@ -60,53 +51,43 @@
         <div style="background-color:#999;" class="map-inner">
 
     <?php if($_SESSION['isLogin'] == ""){ ?>
-    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/sign-up.jpg);background-size:cover;background-position:center;" >
-	    <div id="signup-box" style="text-align:center;">
-		    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div>
-		    <div class="partners">
-	            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1">สมัครสมาชิก</a>
+
+	    <div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/guest.jpg);background-size:cover;background-position:center center;" >
+		    <div id="signup-box" class="disktop-box" style="text-align:center;">
+		    	<div class="first-quote"><?php echo $_language['section1_quote_first']; ?></div>
+		    	<div class="second-quote"><?php echo $_language['section1_quote_second']; ?></div>
+			    <!-- <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">สมัครสมาชิก</div> -->
+			    <div class="partners">
+		            <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1"><?php echo $_language['text_register']; ?></a>
+				</div>
 			</div>
 		</div>
-	</div>
 	
-	<!-- <div class="landing-page-nav">
-		<div class="landing-page-nav-inner">
-			<a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a>
-		</div>
- 	</div> -->
-
  	<?php }else{ // logged in ?>
 
- 	<div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/logged-in.jpg);background-size:cover;background-position:center;" >
-	    <div id="signup-box" style="text-align:center;">
-		    <div style="font-size:50px; color:#FFF; padding:0 0 30px 0;">ยินดีต้อนรับคุณ <?php echo $_SESSION['fullname']?></div>
-		    <div class="partners">
-	            <a href="index.php?page=paid_list" class="btn btn-primary btn-large list-your-property custom-btn-1">ชำระเงิน</a>
+	 	<div id="signup-section" class="section1" style="width:100%;background-image:url(assets/img/landing_page/logged_in.jpg);background-size:cover; background-position:top center;" >
+		    <div id="signup-box" class="disktop-box" style="text-align:center;">
+			    <div class="display-name"><?php echo sprintf($_language['text_welcome'],$_SESSION['fullname']); ?></div>
+			    <div class="partners">
+		            <a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-1"><?php echo $_language['text_pay']; ?></a>
+				</div>
 			</div>
 		</div>
-	</div>
-
-
-	<!-- <div class="landing-page-nav">
-		<div class="landing-page-nav-inner">
-			<a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a>
-		</div>
- 	</div> -->
 		
  	<?php } ?>
 
- 	<div class="landing-page-nav">
+ 	<div class="landing-page-nav show-desktop">
 		<div class="row-fluid">
 			<div class="span4 cell">
 				<div class="cell-header clearfix">
 					<img class="cell-img" src="assets/img/icon/icon-payment.png" />
 					<div class="cell-text">
-						<a href="javascript:void(0);">Payportal</a>
+						<a href="javascript:void(0);" onclick="slideTo('payment-section');"><?php echo $_language['text_pay_portal']; ?></a>
 					</div>
 				</div>
 				<div class="cell-footer">
 					<div class="cell-message">
-						ชำระเงินง่ายๆ และปลอดภัยด้วยระบบการชำระงเินของเรา
+						<?php echo $_language['text_quote_payportal']; ?>
 					</div>
 				</div>
 			</div>
@@ -114,124 +95,137 @@
 				<div class="cell-header clearfix">
 					<img class="cell-img" src="assets/img/icon/icon-book.png" />
 					<div class="cell-text">
-						<a href="javascript:void(0);" onclick="slideTo('e-lib-section');">E-Library</a>
+						<a href="javascript:void(0);" onclick="slideTo('e-lib-section');"><?php echo $_language['text_e_library']; ?></a>
 					</div>
 				</div>
 				<div class="cell-footer">
 					<div class="cell-message">
-						มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา
+						<?php echo $_language['text_quote_e_library']; ?>
 					</div>
 				</div>
 			</div>
 			<div class="span4 cell">
 				<div class="cell-header clearfix">
-					<img class="cell-img" src="assets/img/icon/icon-course.png" />
+					<img class="cell-img" src="assets/img/icon/notification.multiple.png" />
 					<div class="cell-text">
-						<a href="javascript:void(0);" onclick="slideTo('booking-section');">Booking Portal</a>
+						<a href="javascript:void(0);" onclick="slideTo('booking-section');"><?php echo $_language['text_booking_portal']; ?></a>
 					</div>
 				</div>
 				<div class="cell-footer">
 					<div class="cell-message">
-						คอร์สเรียนจากโรงเรียนชื่อดังที่มีให้เลือกมากมายและสามารถชำระเงินไดทันที
+						<?php echo $_language['text_quote_booking_portal']; ?>
 					</div>
 				</div>
 			</div>
 		</div>
  	</div>
- 	
- 	<div id="e-lib-section" class="section1" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/header.png);background-size:cover;background-position:center;" >
-	    <div class="boxText0">
-	 		<h2 style="display:block;">ห้องสมุดอิเล็กทรอนิกส์</h2>
-	 		<div class="sub-text-box">
-		 		<div class="text1">ห้องสมุดของคุณ</div>
-		 		<div class="text2" style="color: #FFFFFF;">มีหนังสือมากมายให้เลือกอ่านและสามารถอ่านได้ทุกที่ทุกเวลา</div>
-			</div>
-	 	</div>
-	 </div>
 
-	 <!-- <img style="width:100%; height:auto;background-size:cover;background-position:center;"  src="assets/img/header.png"/></div> -->
-
-        <div class="container" >
-            <div class="row" >
-                <div class="span3" >
-                    <div class="property-filter pull-right" style="display:none;">
-                        <div class="content">
-                            <form method="POST" action="index.php?page=main">
-	                            <div class="type control-group">
-	                            	<label class="control-label" style="font-size:24px;" for="inputLocation">
-                                        ชำระเงิน
-                                    </label>
-                                    
-                                    <label class="control-label" style="margin-top:10px; margin-bottom:20px; border-bottom: 1px solid white;" for="inputLocation">
-                                       
-                                    </label>
-
-	                            </div>
-                                <div class="location control-group">
-                                    <label class="control-label"  style="margin-top:20px;" for="inputLocation">
-                                        สถานศึกษา
-                                    </label>
-                                    <div class="controls">
-                                        <!-- <select id="inputLocation3" name="university_id">
-                                        	<?php
-				                        		$cmd ="SELECT * FROM university ORDER BY university_name ASC";
-									            $result= $database->query($cmd);
-									            $nums=mysql_num_rows($result);
-									            for($i=0;$i<$nums;$i++){
-										        	$row = mysql_fetch_array($result);
-										        	?>
-										        		<option value="<?php echo $row["university_id"]?>"><?php echo $row["university_name"]?></option>
-										        	<?php
-										        }
-		
-			                        		?>
-                                        </select> -->
-                                    </div><!-- /.controls -->
-                                </div><!-- /.control-group -->
-
-                                <div class="type control-group">
-                                    <label class="control-label" for="inputType"  style="margin-top:20px;">
-                                        รหัสการชำระเงิน (Invoice ID)
-                                    </label>
-                                    <div class="controls">
-                                    	<input type="text" placeHolder="Invoice ID" name="invoice_info_id" />
-                                    </div><!-- /.controls -->
-                                </div><!-- /.control-group -->
-
-                               
-                                <div class="form-actions">
-                                    <input type="submit" value="ค้นหารายการ" style="margin-top:20px;" class="btn btn-primary btn-large">
-                                </div><!-- /.form-actions -->
-                                <input type="hidden" name="action" id="action" value="search" />
-                            </form>
-                        </div><!-- /.content -->
-                    </div><!-- /.property-filter -->
-                </div><!-- /.span3 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
     </div><!-- /.map -->
 </div><!-- /.map-wrapper -->
 
-<div class="row" style="height:50px;">
+<div class="hidden-desktop span12" style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote" style="color:#06a7ea;"><img class="cell-img" src="assets/img/icon/icon-payment.png" /><?php echo $_language['text_pay_portal']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['text_quote_payportal']; ?></div>
+ 	</div>
+ </div>
+
+ <div class="hidden-desktop span12"style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote" style="color:#06a7ea;"><img class="cell-img" src="assets/img/icon/icon-book.png" /><?php echo $_language['text_e_library']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['text_quote_e_library']; ?></div>
+ 	</div>
+ </div>
+
+ <div class="hidden-desktop span12" style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote" style="color:#06a7ea;"><img class="cell-img" src="assets/img/icon/notification.multiple.png" /><?php echo $_language['text_booking_portal']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['text_quote_booking_portal']; ?></div>
+ 	</div>
+ </div>
+
+<!-- Payportal Main Service -->
+<!-- <div id="payment-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/landing_page/payment.jpg);background-size:cover;background-position:center;" >
+	<div class="boxText5" style="margin-left:47%;" >
+ 		<h2>ชำระเงินได้ทันที</h2>
+ 		<div class="sub-text-box">
+	 		<div class="text1">ปลอดภัยและรวดเร็ว</div>
+	 		<div class="text2">ชำระเงินได้ง่ายๆ และปลอดภัยกว่าในการชำระค่าใช้จ่ายของสถาบันการศึกษาชั้นนำหลายพันแห่ง</div>
+	 	</div>
+	 	<a href="index.php?page=paid_list" class="btn btn-primary list-your-property custom-btn-2" style="float:left;">ชำระค่าเทอมทันที</a>
+ 	</div>
+ </div> -->
+
+<div class="row" style="height:10px; background-color:#06a7ea;">
 	<div style="text-align: center;">
 		<!-- <a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a> -->
 	</div>
 </div>
 
-<div id="booking-section" class="section4" style="width:100%;padding-bottom: 32%;background-image:url(assets/img/study_course.jpg);background-size:cover;background-position:center;" >
-	<div class="boxText5" style="margin-left:47%;" >
- 		<h2>เข้าถึงการเรียนรู้ที่คุณต้องการ</h2>
+ <div id="e-lib-section" class="banner-container section1" style="background-image:url(assets/img/landing_page/library.jpg);background-size:cover;background-position:center;" >
+    <div class="boxText0 show-desktop">
+ 		<h2 style="display:block;"><?php echo $_language['section2_quote_first']; ?></h2>
  		<div class="sub-text-box">
-	 		<div class="text1">เลือกคอร์สเรียนสำหรับคุณ</div>
-	 		<div class="text2">คอร์สเรียนจากโรงเรียนชื่อดังที่มีให้เลือกมากมายและสามารถชำระเงินไดทันที</div>
-	 	</div>
+	 		<div class="text1"><?php echo $_language['section2_quote_second']; ?></div>
+	 		<div class="text2" style="color: #FFFFFF;"><?php echo $_language['section2_quote_third']; ?></div>
+		</div>
+		<a href="http://thaidemo.ebook.hyread.com.tw/" class="btn btn-primary list-your-property custom-btn-2"><?php echo $_language['text_more']; ?></a>
  	</div>
  </div>
 
+ <div class="hidden-desktop span12" style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote"><?php echo $_language['section2_quote_first']; ?></div>
+	 	<div class="second-quote"><?php echo $_language['section2_quote_second']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['section2_quote_third']; ?></div>
+	 	<a href="http://thaidemo.ebook.hyread.com.tw/" class="btn btn-primary list-your-property custom-btn-2" style="margin-top:20px;"><?php echo $_language['text_more']; ?></a>
+ 	</div>
+ </div>
+
+<div class="row" style="height:10px; background-color:#06a7ea;">
+	<div style="text-align: center;">
+		<!-- <a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a> -->
+	</div>
+</div>
+
+<div id="booking-section" class="banner-container section4" style="background-image:url(assets/img/landing_page/booking.jpg);background-size:cover;background-position:center;" >
+	<div class="boxText5 show-desktop" style="margin-left:47%;" >
+ 		<h2><?php echo $_language['section3_quote_first']; ?></h2>
+ 		<div class="sub-text-box">
+	 		<div class="text1"><?php echo $_language['section3_quote_second']; ?></div>
+	 		<div class="text2"><?php echo $_language['section3_quote_third']; ?></div>
+	 	</div>
+	 	<a href="index.php?page=booking" class="btn btn-primary list-your-property custom-btn-2" style="float:left;"><?php echo $_language['text_more']; ?></a>
+ 	</div>
+ </div>
+
+ <div class="hidden-desktop span12" style="background-color:#FFF;">
+ 	<div class="hidden-box">
+	 	<div class="primary-quote"><?php echo $_language['section3_quote_first']; ?></div>
+	 	<div class="second-quote"><?php echo $_language['section3_quote_second']; ?></div>
+	 	<div class="third-quote"><?php echo $_language['section3_quote_third']; ?></div>
+	 	<a href="index.php?page=booking" class="btn btn-primary list-your-property custom-btn-2" style="margin-top:20px;"><?php echo $_language['text_more']; ?></a>
+ 	</div>
+ </div>
+
+ <div class="row" style="height:10px; background-color:#06a7ea;">
+	<div style="text-align: center;">
+		<!-- <a href="javascript:void(0);" onclick="slideTo('payment-section');" class="nav-btn large" style="background-image:url(assets/img/arrow-bottom-black@2x.png);"></a> -->
+	</div>
+</div>
+
+<div class="panel">
+	<div style="text-align:center;">
+		<div class="partners">
+			<div style="font-size:40px; color:#000; padding:0 0 30px 0;"><?php echo $_language['text_register']; ?></div>
+		    <a href="index.php?page=register" class="btn btn-primary btn-large list-your-property custom-btn-1"><?php echo $_language['text_register']; ?></a>
+		</div>
+	</div>
+</div>
 
  <div class="partners" style="background-color:#FFF;">
 
- 	<div style="font-size:40px; text-align:center; padding:40px 0;">สถาบันเข้าร่วมโครงการ</div>
+ 	<div style="font-size:40px; text-align:center; padding:40px 0;"><?php echo $_language['text_join_us']; ?></div>
 
 						<div class="content">
 					        
@@ -264,21 +258,13 @@
 
 					<div>
 
-			<div class="section3" style="width:100%; height:298px; background-color:rgb(245,245,245);" >
+			<div class="section3" style="width:100%; background-color:rgb(245,245,245);" >
 			  	<div class="boxText3" style="color:#000;">
-			 		<h2 style="font-size:36px !important;">วิธีการชำระเงิน</h2>
+			 		<h2 style="font-size:36px !important;"><?php echo $_language['text_how_to_pay']; ?></h2>
 			 		<span style="font-size:22px;">
-			 			1.กรอกรหัสขำระเงิน<br/>
-			 			2.เลือกธนาคารที่ต้องการชำระเงิน<br/>
-			 			3.กดยืนยันการชำระเงิน<br/>
-			 			4.จากนั้นระบบจะทำการชำระเงิน<br/>
-			 			5.เมื่อระบบมำการชำระเงินเสร็จสิ้นจะส่งใบเสร็จรับเงินไปยังอีเมลของคุณ
+			 			<?php echo $_language['text_how_to_pay_detail']; ?>
 			 		</span>
 			 		
-			 	</div>
-			 	<div class="boxText4" style="color:#000;">
-			 		<h2 style="font-size:36px !important;"></h2>
-			 		<span style="font-size:22px;"></span>
 			 	</div>
 
  			</div>
@@ -291,64 +277,67 @@
 
 <script type="text/javascript">
 
+	// First Banner handle displaying full screen on any resolution
 	var h = window.innerHeight;
-	var btmh = 90 + 180;
+	var btmh = 90 + 180 + 40; // header bar + below first banner
 	var v = h-btmh;
 	var e = document.getElementById("signup-section");
 	e.style.height = v+"px";
 	var e2 = document.getElementById("signup-box");
 	e2.style.paddingTop = ((v-e2.clientHeight)/2) + "px";
 
-	function gradeChange(e){
+	
 
-		// var newSelect=document.createElement('select');
-		var newSelect=document.getElementById('select-box-class-value');
-		newSelect.innerHTML = "";
-		// var index=0;
-		var opt = document.createElement("option");
+	// function gradeChange(e){
 
-		opt.value= 0;
-		opt.innerHTML = "ปีที่"; // whatever property it has
-		newSelect.appendChild(opt);
+	// 	// var newSelect=document.createElement('select');
+	// 	var newSelect=document.getElementById('select-box-class-value');
+	// 	newSelect.innerHTML = "";
+		
+	// 	var opt = document.createElement("option");
 
-		var grade = e.options[e.selectedIndex].value;
+	// 	opt.value= 0;
+	// 	opt.innerHTML = "ปีที่"; // whatever property it has
+	// 	newSelect.appendChild(opt);
 
-		switch(grade){
+	// 	var grade = e.options[e.selectedIndex].value;
 
-			case '0':
+	// 	switch(grade){
 
-			break;
+	// 		case '0':
+
+	// 		break;
 			
-			case 'k':
-				for (i = 1; i <= 3; i++) 
-				{
-				   var opt = document.createElement("option");
-				   opt.value= i;
-				   opt.innerHTML = i; // whatever property it has
+	// 		case 'k':
+	// 			for (i = 1; i <= 3; i++) 
+	// 			{
+	// 			   var opt = document.createElement("option");
+	// 			   opt.value= i;
+	// 			   opt.innerHTML = i; // whatever property it has
 
-				   // then append it to the select element
-				   newSelect.appendChild(opt);
-				   // index++;
-				}
-			break;
+	// 			   // then append it to the select element
+	// 			   newSelect.appendChild(opt);
+	// 			   // index++;
+	// 			}
+	// 		break;
 
-			default: // p,s
-				for (i = 1; i <= 6; i++) 
-				{
-				   var opt = document.createElement("option");
-				   opt.value= i;
-				   opt.innerHTML = i; // whatever property it has
+	// 		default: // p,s
+	// 			for (i = 1; i <= 6; i++) 
+	// 			{
+	// 			   var opt = document.createElement("option");
+	// 			   opt.value= i;
+	// 			   opt.innerHTML = i; // whatever property it has
 
-				   // then append it to the select element
-				   newSelect.appendChild(opt);
-				   // index++;
-				}
+	// 			   // then append it to the select element
+	// 			   newSelect.appendChild(opt);
+	// 			   // index++;
+	// 			}
 
-		}
+	// 	}
 
-		// $("#select-box-class-value").html("").append(newSelect);
+	// 	// $("#select-box-class-value").html("").append(newSelect);
 				
-	}
+	// }
 
 	function slideTo(id){
 		var t = $("#"+id).offset().top;

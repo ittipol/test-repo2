@@ -50,8 +50,8 @@ class University extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'university_id' => 'University',
-			'university_name' => 'University Name',
+			'university_id' => 'Educational institution',
+			'university_name' => 'Educational institution Name',
 		);
 	}
 

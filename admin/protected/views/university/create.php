@@ -1,18 +1,18 @@
 <?php
-/* @var $this UniversityController */
-/* @var $model University */
+/* @var $this Educational institutionController */
+/* @var $model Educational institution */
 
 $this->breadcrumbs=array(
-	'Universities'=>array('index'),
+	'Educational institution'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	// array('label'=>'List University', 'url'=>array('index')),
-	array('label'=>'Manage University', 'url'=>array('admin')),
+	// array('label'=>'List Educational institution', 'url'=>array('index')),
+	array('label'=>'Manage Educational institution', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create University</h1>
+<h1>Create Educational institution</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

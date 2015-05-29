@@ -28,7 +28,7 @@
 								        </thead>
 								        <tbody>
 								        <?php
-								        	$cmd ="SELECT invoice_id, invoice_info_id, DATE(invoice_info_payed_date) AS invoice_info_payed_date FROM invoice WHERE member_id = ".$_SESSION['member_id'];
+								        	$cmd ="SELECT invoice_id, invoice_info_id, DATE(invoice_info_payed_date) AS invoice_info_payed_date FROM invoice WHERE member_id = ".$_SESSION['member_id']. " AND invoice_info_status = 'ชำระเงินเรียบร้อยเเล้ว'";
 									        $result = $database->query($cmd);
 									        $nums = mysql_num_rows($result);
 									        for($i = 0 ; $i < $nums; $i++)

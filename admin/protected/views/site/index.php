@@ -122,7 +122,7 @@
 		</div>
 	</div> -->
 
-	<div class="chart c-full" style="width:200px;">
+	<!-- <div class="chart c-full" style="width:200px;">
 		<h4>จำนวนทียังไม่ได้จ่าย</h4>
 		<div class="dashboard-content">
 			<div id="chart2" style="width: 100%; height: 100%;"></div>
@@ -134,7 +134,231 @@
     <div class="dashboard-content">
       <div id="chart3" style="width: 100%; height: 100%;"></div>
     </div>
+  </div> -->
+
+  <?php if(Yii::app()->user->getState('is_top_admin')){ ?>
+
+  <div class="clearfix" style="padding-top:20px; padding-bottom:20px;">
+    <div style="float:left; height:80px; margin-right:20px;">
+      <img src="<?php echo Yii::app()->user->getState('school_logo'); ?>" style="height:100px;" />
+    </div>
+    <div style="float:left;">
+      <div>ระบบบจัดการข้อมูล</div>
+      <div style="font-size:20px;"><?php echo Yii::app()->user->getState('school_name'); ?></div>
+    </div>
   </div>
 
+  <?php }else{ ?>
+
+  <div class="clearfix" style="padding-top:20px; padding-bottom:20px;">
+    <div>ระบบบจัดการข้อมูล</div>
+    <div style="font-size:20px;">คูณเข้าระบบด้วยสิทธิ Administrator</div>
+  </div>
+
+  <?php } ?>
+
+  <hr/>
+
+  <div>
+
+    <h2>ค่าทางสถิติ</h2>
+
+    <div style="float:left;">
+      <!-- Graph HTML -->
+      <div id="graph-wrapper">
+          <div class="graph-info">
+              <a href="javascript:void(0)" class="visitors">Visitors</a>
+              <a href="javascript:void(0)" class="returning">Returning Visitors</a>
+       
+              <a href="#" class="bars"><span></span></a>
+              <a href="#" class="lines active"><span></span></a>
+          </div>
+       
+          <div class="graph-container">
+              <div id="graph-lines" class="graph-lines"></div>
+              <div id="graph-bars" class="graph-bars"></div>
+          </div>
+      </div>
+      <!-- end Graph HTML -->
+    </div>
+
+    <div style="float:left; margin-left: 50px;">
+      <!-- Graph HTML -->
+      <div id="graph-wrapper">
+          <div class="graph-info">
+              <a href="javascript:void(0)" class="visitors">Income</a>
+              <a href="javascript:void(0)" class="returning">Profit</a>
+       
+              <a href="#" class="bars"><span></span></a>
+              <a href="#" class="lines active"><span></span></a>
+          </div>
+       
+          <div class="graph-container">
+              <div id="graph-lines2" class="graph-lines"></div>
+              <div id="graph-bars2" class="graph-bars"></div>
+          </div>
+      </div>
+      <!-- end Graph HTML -->
+    </div>
+
+  </div>
 
 </div>
+
+<script type="text/javascript">
+
+  function showTooltip(x, y, contents) {
+      $('<div id="tooltip">' + contents + '</div>').css({
+          top: y - 16,
+          left: x + 20
+      }).appendTo('body').fadeIn();
+  }
+
+  $(document).ready(function(){
+
+    var graphData = [{
+          // Visits
+          data: [ [6, 1300], [7, 1600], [8, 1900], [9, 2100], [10, 2500], [11, 2200], [12, 2000], [13, 1950], [14, 1900], [15, 2000] ],
+          color: '#71c73e'
+      }, {
+          // Returning Visits
+          data: [ [6, 500], [7, 600], [8, 550], [9, 600], [10, 800], [11, 900], [12, 800], [13, 850], [14, 830], [15, 1000] ],
+          color: '#77b7c5',
+          points: { radius: 4, fillColor: '#77b7c5' }
+      }
+    ];
+
+    var graphData2 = [{
+          // Visits
+          data: [ [1, 1950], [2, 2500], [3, 2000] ],
+          color: '#71c73e'
+      }, {
+          // Returning Visits
+          data: [ [1, 850], [2, 750], [3, 1000] ],
+          color: '#77b7c5',
+          points: { radius: 4, fillColor: '#77b7c5' }
+      }
+    ];
+
+    // create any graphs
+    plotGraph('#graph-lines','#graph-bars', graphData);
+    setGraphHoverOver('#graph-lines','#graph-bars', '');
+    plotGraph('#graph-lines2','#graph-bars2', graphData2);
+    setGraphHoverOver('#graph-lines2','#graph-bars2', '');
+
+    // switch between graphs, when user click line or bar button
+    $('.lines').on('click', function (e) {
+        $(this.parentNode.querySelectorAll(".bars")).removeClass('active');
+        $(this.parentNode.parentNode.querySelectorAll(".graph-container .graph-bars")).fadeOut();
+        $(this).addClass('active');
+        $(this.parentNode.parentNode.querySelectorAll(".graph-container .graph-lines")).fadeIn();
+        e.preventDefault();
+    });
+
+    $('.bars').on('click', function (e) {
+        $(this.parentNode.querySelectorAll(".lines")).removeClass('active');
+        $(this.parentNode.parentNode.querySelectorAll(".graph-container .graph-lines")).fadeOut();
+        $(this).addClass('active');
+        $(this.parentNode.parentNode.querySelectorAll(".graph-container .graph-bars")).fadeIn().removeClass('hidden');
+        e.preventDefault();
+    });
+
+    // $('#lines').on('click', function (e) {
+    //     $('#bars').removeClass('active');
+    //     $('#graph-bars').fadeOut();
+    //     $(this).addClass('active');
+    //     $('#graph-lines').fadeIn();
+    //     e.preventDefault();
+    // });
+     
+    // $('#bars').on('click', function (e) {
+    //     $('#lines').removeClass('active');
+    //     $('#graph-lines').fadeOut();
+    //     $(this).addClass('active');
+    //     $('#graph-bars').fadeIn().removeClass('hidden');
+    //     e.preventDefault();
+    // });
+
+  });
+
+  function plotGraph(graphLineElem, graphBarElem, graphData){
+
+    // Lines
+    $.plot($(graphLineElem), graphData, {
+        series: {
+            points: {
+                show: true,
+                radius: 5
+            },
+            lines: {
+                show: true
+            },
+            shadowSize: 0
+        },
+        grid: {
+            color: '#646464',
+            borderColor: 'transparent',
+            borderWidth: 20,
+            hoverable: true
+        },
+        xaxis: {
+            tickColor: 'transparent',
+            tickDecimals: 0
+        },
+        yaxis: {
+            tickSize: 1000
+        }
+    });
+     
+    // Bars
+    $.plot($(graphBarElem), graphData, {
+        series: {
+            bars: {
+                show: true,
+                barWidth: .9,
+                align: 'center'
+            },
+            shadowSize: 0
+        },
+        grid: {
+            color: '#646464',
+            borderColor: 'transparent',
+            borderWidth: 20,
+            hoverable: true
+        },
+        xaxis: {
+            tickColor: 'transparent',
+            tickDecimals: 0
+        },
+        yaxis: {
+            tickSize: 1000
+        }
+    });
+
+    $(graphBarElem).hide();
+
+  }
+
+  function setGraphHoverOver(graphLineElem, graphBarElem, message){
+
+    var previousPoint = null;
+     
+    $(graphLineElem+', '+graphBarElem).bind('plothover', function (event, pos, item) {
+        if (item) {
+            if (previousPoint != item.dataIndex) {
+                previousPoint = item.dataIndex;
+                $('#tooltip').remove();
+                var x = item.datapoint[0],
+                    y = item.datapoint[1];
+                    // showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
+                    showTooltip(item.pageX, item.pageY, y);
+            }
+        } else {
+            $('#tooltip').remove();
+            previousPoint = null;
+        }
+    });
+
+  }
+
+</script>

@@ -1,18 +1,18 @@
 <?php
-/* @var $this UniversityController */
+/* @var $this Educational institutionController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Universities',
+	'Educational institution',
 );
 
 $this->menu=array(
-	array('label'=>'Create University', 'url'=>array('create')),
-	array('label'=>'Manage University', 'url'=>array('admin')),
+	array('label'=>'Create Educational institution', 'url'=>array('create')),
+	array('label'=>'Manage Educational institution', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Universities</h1>
+<h1>Educational institution</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

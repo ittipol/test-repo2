@@ -1,6 +1,6 @@
 <?php
-/* @var $this UniversityController */
-/* @var $model University */
+/* @var $this Educational institutionController */
+/* @var $model Educational institution */
 /* @var $form CActiveForm */
 ?>
 

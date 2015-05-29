@@ -1,7 +1,8 @@
 <?php $this->widget('bootstrap.widgets.TbNavbar', array(
 	'type'=>'inverse',
-    'brand'=> (Yii::app()->user->isGuest)? 'Administrator' :'<img style="height:44px; padding:0; margin:0;" src="'.Yii::app()->user->getState('logo').'" />',
-    'brandUrl'=>'index.php?r=collection/index',
+    // 'brand'=> (Yii::app()->user->isGuest || !Yii::app()->user->getState('is_top_admin'))? 'Administrator' :'<img style="height:44px; padding:0; margin:0;" src="'.Yii::app()->user->getState('school_logo').'" />',
+    'brand'=>'Administrator',
+    'brandUrl'=>'index.php?r=site/index',
     'collapse'=>true,
     'items'=>array(
         array(
@@ -9,9 +10,7 @@
             'encodeLabel'=>false,
             'items'=>array(
                 array('label'=>'Dashboard','icon'=>'home gray', 'url'=>array('/site/index')),
-                array('label'=>'School','icon'=>'info-sign gray', 'url'=>array('/school/admin')
-                    ,'visible'=>Yii::app()->user->checkAccess('administrator')),
-                array('label'=>'University','icon'=>'info-sign gray', 'url'=>array('/university/admin')
+                array('label'=>'Educational institution','icon'=>'info-sign gray', 'url'=>array('/university/admin')
                     ,'visible'=>Yii::app()->user->checkAccess('administrator')),
                 array('label'=>'Course','icon'=>'info-sign gray', 'url'=>array('/course/admin')
                     ,'visible'=>Yii::app()->user->checkAccess('teacher')),

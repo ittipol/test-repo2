@@ -133,7 +133,13 @@ class User extends CActiveRecord
 			':2'	=>	md5($password),
 		);
 
-		$models = User::model()->with(array('university'))->find($criteria);
+		$with = array(
+				'university'=>array(
+						'joinType' => 'LEFT JOIN',
+					),
+			);
+
+		$models = User::model()->with($with)->find($criteria);
 
 		if($models) return $models;
 		else return array();

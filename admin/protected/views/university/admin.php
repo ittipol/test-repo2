@@ -1,16 +1,16 @@
 <?php
-/* @var $this UniversityController */
-/* @var $model University */
+/* @var $this Educational institutionController */
+/* @var $model Educational institution */
 
 $this->breadcrumbs=array(
-	'Universities'=>array('index'),
+	'Educational institution'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	// array('label'=>'List University', 'url'=>array('index')),
-	array('label'=>'Manage University', 'url'=>array('admin')),
-	array('label'=>'Create University', 'url'=>array('create')),
+	// array('label'=>'List Educational institution', 'url'=>array('index')),
+	array('label'=>'Manage Educational institution', 'url'=>array('admin')),
+	array('label'=>'Create Educational institution', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Universities</h1>
+<h1>Manage Educational institution</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

@@ -1,22 +1,22 @@
 <?php
-/* @var $this UniversityController */
-/* @var $model University */
+/* @var $this Educational institutionController */
+/* @var $model Educational institution */
 
 $this->breadcrumbs=array(
-	'Universities'=>array('index'),
+	'Educational institution'=>array('index'),
 	$model->university_id,
 );
 
 $this->menu=array(
-	// array('label'=>'List University', 'url'=>array('index')),
-	array('label'=>'Create University', 'url'=>array('create')),
-	array('label'=>'Update University', 'url'=>array('update', 'id'=>$model->university_id)),
-	array('label'=>'Delete University', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->university_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage University', 'url'=>array('admin')),
+	// array('label'=>'List Educational institution', 'url'=>array('index')),
+	array('label'=>'Create Educational institution', 'url'=>array('create')),
+	array('label'=>'Update Educational institution', 'url'=>array('update', 'id'=>$model->university_id)),
+	array('label'=>'Delete Educational institution', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->university_id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Educational institution', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View University #<?php echo $model->university_id; ?></h1>
+<h1>View Educational institution #<?php echo $model->university_id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
